@@ -32,7 +32,7 @@
                             }">
                             <Slide v-for="(item, index) in project.gallery_images" :key="index">
                                 <div class="px-[2px]">
-                                    <img :src="item.images" @click="openImage(item.images)"
+                                    <img :src="item.images" @click="openImage(item.images, index)"
                                         class="w-full h-[80px] md:h-[80px] object-cover rounded-[5px] cursor-pointer" />
                                 </div>
                             </Slide>
@@ -219,7 +219,7 @@
             </div>
 
         </div>
-        <div v-if="selectedImage" class="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center"
+        <!-- <div v-if="selectedImage" class="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center"
             @click="closeImage">
             <img :src="selectedImage" class="max-w-[90%] max-h-[90vh] object-contain" @click.stop />
 
@@ -228,6 +228,28 @@
                 <span class="material-symbols-outlined text-black">
                     close
                 </span>
+            </button>
+        </div> -->
+        <div v-if="selectedImage" class="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center"
+            @click="closeImage">
+            <img :src="selectedImage" class="max-w-[90%] max-h-[90vh] object-contain" @click.stop />
+
+            <!-- Close -->
+            <button @click.stop="closeImage"
+                class="absolute top-5 right-5 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <!-- Previous -->
+            <button @click.stop="prevImage"
+                class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+
+            <!-- Next -->
+            <button @click.stop="nextImage"
+                class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <span class="material-symbols-outlined">chevron_right</span>
             </button>
         </div>
     </section>
@@ -626,14 +648,34 @@ const route = useRoute();
 
 const project = ref({});
 const selectedImage = ref(null);
+const currentIndex = ref(0)
 
-const openImage = (image) => {
-    selectedImage.value = image;
-};
+// const openImage = (image) => {
+//     selectedImage.value = image;
+// };
+const openImage = (image, index) => {
+    selectedImage.value = image
+    currentIndex.value = index
+}
 
 const closeImage = () => {
     selectedImage.value = null;
 };
+const nextImage = () => {
+    currentIndex.value =
+        (currentIndex.value + 1) % project.value.gallery_images.length
+
+    selectedImage.value =
+        project.value.gallery_images[currentIndex.value].images
+}
+const prevImage = () => {
+    currentIndex.value =
+        (currentIndex.value - 1 + project.value.gallery_images.length) %
+        project.value.gallery_images.length
+
+    selectedImage.value =
+        project.value.gallery_images[currentIndex.value].images
+}
 
 const getFileUrl = (file) => {
     return `${window.location.origin}/files/${file}`;
