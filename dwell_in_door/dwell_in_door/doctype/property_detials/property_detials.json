@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:url",
+ "creation": "2026-07-06 12:34:20.759442",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_name",
+  "location",
+  "price",
+  "bedrooms",
+  "bathrooms",
+  "area",
+  "image",
+  "is_active",
+  "varints",
+  "brochure",
+  "property_loaction_link",
+  "property_loaction_detail_descr",
+  "property_location_type",
+  "column_break_sgeo",
+  "url",
+  "order_by",
+  "total_area",
+  "configuration",
+  "floors",
+  "possession",
+  "descrption",
+  "long__descrption",
+  "section_break_nwhl",
+  "gallery_images",
+  "section_break_tqeh",
+  "project_highlights",
+  "section_break_swmw",
+  "property_configuartion",
+  "section_break_bikh",
+  "property_amenities",
+  "section_break_hhib",
+  "floor_plan",
+  "section_break_eqlh",
+  "property_location_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Data",
+   "label": "Price"
+  },
+  {
+   "fieldname": "bedrooms",
+   "fieldtype": "Select",
+   "label": "Bedrooms",
+   "options": "1 Bedroom\n2 Bedroom\n3 Bedroom\n4 Bedroom\n5 Bedroom\n6 Bedroom"
+  },
+  {
+   "fieldname": "bathrooms",
+   "fieldtype": "Select",
+   "label": "Bathrooms",
+   "options": "2 Bathrooms\n3 Bathrooms\n4 Bathrooms\n1 Bathrooms\n5 Bathrooms\n6 Bathrooms"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "column_break_sgeo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "Url",
+   "unique": 1
+  },
+  {
+   "fieldname": "order_by",
+   "fieldtype": "Int",
+   "label": "Order_by"
+  },
+  {
+   "fieldname": "section_break_nwhl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gallery_images",
+   "fieldtype": "Table",
+   "label": "Gallery Images",
+   "options": "Gallery Iamges"
+  },
+  {
+   "fieldname": "total_area",
+   "fieldtype": "Data",
+   "label": "Total Area"
+  },
+  {
+   "fieldname": "configuration",
+   "fieldtype": "Data",
+   "label": "Configuration"
+  },
+  {
+   "fieldname": "floors",
+   "fieldtype": "Data",
+   "label": "Floors"
+  },
+  {
+   "fieldname": "possession",
+   "fieldtype": "Data",
+   "label": "Possession"
+  },
+  {
+   "fieldname": "descrption",
+   "fieldtype": "Small Text",
+   "label": "Descrption"
+  },
+  {
+   "fieldname": "varints",
+   "fieldtype": "Data",
+   "label": "Varints"
+  },
+  {
+   "fieldname": "brochure",
+   "fieldtype": "Attach",
+   "label": " Brochure"
+  },
+  {
+   "fieldname": "section_break_tqeh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project_highlights",
+   "fieldtype": "Table",
+   "label": "Project Highlights",
+   "options": "Project Highlights"
+  },
+  {
+   "fieldname": "long__descrption",
+   "fieldtype": "Text Editor",
+   "label": "Long  Descrption"
+  },
+  {
+   "fieldname": "section_break_swmw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "property_configuartion",
+   "fieldtype": "Table",
+   "label": "Property Configuartion",
+   "options": "Property Configuartion"
+  },
+  {
+   "fieldname": "section_break_bikh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "property_amenities",
+   "fieldtype": "Table",
+   "label": "Property Amenities",
+   "options": "Property Amenities"
+  },
+  {
+   "fieldname": "section_break_hhib",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "floor_plan",
+   "fieldtype": "Table",
+   "label": "Floor Plan",
+   "options": "Floor Plan"
+  },
+  {
+   "fieldname": "property_loaction_link",
+   "fieldtype": "Small Text",
+   "label": "Property Loaction Link"
+  },
+  {
+   "fieldname": "property_loaction_detail_descr",
+   "fieldtype": "Small Text",
+   "label": "Property Loaction Detail Descr"
+  },
+  {
+   "fieldname": "section_break_eqlh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "property_location_details",
+   "fieldtype": "Table",
+   "label": "Property Location Details",
+   "options": "Property Location Details"
+  },
+  {
+   "fieldname": "property_location_type",
+   "fieldtype": "Link",
+   "label": "Property Location Type",
+   "options": "Property Located Type"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-10 15:52:12.699678",
+ "modified_by": "Administrator",
+ "module": "Dwell-In-Door",
+ "name": "Property Detials",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

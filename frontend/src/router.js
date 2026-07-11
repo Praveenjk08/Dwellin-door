@@ -4,13 +4,37 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/pages/Home.vue'),
+    component: () => import('@/home/Home.vue'),
   },
+  // {
+  //   path: "/detailpage",
+  //   name: "detailpage",
+  //   component: () => import('@/pages/DetailPage.vue')
+
+  // },
+  {
+    path: "/properties",
+    name: "properties",
+    component: () => import('@/pages/PropertyList.vue'),
+  },
+  {
+    path: "/properties/:url",
+    name: "PropertyDetail",
+    component: () => import('@/pages/DetailPage.vue'),
+    props: true
+  },
+
 ]
 
 let router = createRouter({
-  history: createWebHistory('/frontend'),
+  history: createWebHistory('/'),
   routes,
+  scrollBehavior() {
+    return {
+      top: 0,
+      behavior: "smooth",
+    };
+  },
 })
 
 export default router

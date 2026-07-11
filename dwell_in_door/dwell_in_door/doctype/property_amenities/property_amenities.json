@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-09 10:58:10.451824",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "amenity_name",
+  "amenity_icon"
+ ],
+ "fields": [
+  {
+   "fieldname": "amenity_name",
+   "fieldtype": "Data",
+   "label": "Amenity Name"
+  },
+  {
+   "fieldname": "amenity_icon",
+   "fieldtype": "Data",
+   "label": "Amenity Icon"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-09 11:00:48.082354",
+ "modified_by": "Administrator",
+ "module": "Dwell-In-Door",
+ "name": "Property Amenities",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

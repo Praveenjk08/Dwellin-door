@@ -5,6 +5,11 @@ app_description = "real estate app"
 app_email = "praveenjk088@gmail.com"
 app_license = "mit"
 
+website_route_rules = [
+    {"from_route": "/", "to_route": "/"},
+     {"from_route": "/properties", "to_route": "properties"},
+    {"from_route": "/properties/<path:url>", "to_route": "property-detail"},
+]
 # Apps
 # ------------------
 
