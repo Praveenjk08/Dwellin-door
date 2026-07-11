@@ -7,8 +7,8 @@ app_license = "mit"
 
 website_route_rules = [
     {"from_route": "/", "to_route": "/"},
-     {"from_route": "/properties", "to_route": "properties"},
-    {"from_route": "/properties/<path:url>", "to_route": "property-detail"},
+    {"from_route": "/properties", "to_route": "/"},
+    {"from_route": "/properties/<path:url>", "to_route": "/"},
 ]
 # Apps
 # ------------------

@@ -99,7 +99,7 @@
                             keyboard_arrow_down
                         </span>
                     </RouterLink>
-                    <RouterLink to="/properties"
+                    <RouterLink to="/properties" @click="mobileMenu = false"
                         class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#C9A227] transition-colors">
                         <span>Services</span>
                         <span class="material-symbols-outlined text-[18px]">
