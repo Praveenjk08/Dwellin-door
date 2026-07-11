@@ -24,10 +24,10 @@
                                     itemsToShow: 2.8
                                 },
                                 640: {
-                                    itemsToShow: 6
+                                    itemsToShow: 6.4
                                 },
                                 1024: {
-                                    itemsToShow: 6
+                                    itemsToShow: 6.4
                                 }
                             }">
                             <Slide v-for="(item, index) in project.gallery_images" :key="index">
