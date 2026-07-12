@@ -53,7 +53,7 @@ def get_similar_projects(location_type, current_project):
 import frappe
 import json
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def list_get_property_detils_for_cards(property_location_type=None, bathrooms=None, bedroom=None):
 
     filters = {}
