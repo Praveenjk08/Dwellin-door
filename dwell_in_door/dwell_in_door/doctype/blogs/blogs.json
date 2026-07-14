@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "field:blog_name",
+ "autoname": "field:url",
  "creation": "2026-07-06 17:11:15.900826",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +12,18 @@
   "advice",
   "is_active",
   "image",
-  "order_by"
+  "order_by",
+  "small_description",
+  "author_icon",
+  "author_name",
+  "column_break_nilp",
+  "url",
+  "blog_heading",
+  "description1",
+  "section_break_xhmg",
+  "descrption_2",
+  "column_break_stgd",
+  "descrption_3"
  ],
  "fields": [
   {
@@ -46,12 +57,66 @@
    "fieldname": "order_by",
    "fieldtype": "Int",
    "label": "Order by"
+  },
+  {
+   "fieldname": "column_break_nilp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "Url",
+   "unique": 1
+  },
+  {
+   "fieldname": "small_description",
+   "fieldtype": "Small Text",
+   "label": "Small description"
+  },
+  {
+   "fieldname": "blog_heading",
+   "fieldtype": "Data",
+   "label": "Blog heading"
+  },
+  {
+   "fieldname": "description1",
+   "fieldtype": "Text Editor",
+   "label": "Description1"
+  },
+  {
+   "fieldname": "section_break_xhmg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "descrption_2",
+   "fieldtype": "Text Editor",
+   "label": "Descrption 2"
+  },
+  {
+   "fieldname": "column_break_stgd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descrption_3",
+   "fieldtype": "Text Editor",
+   "label": "Descrption 3"
+  },
+  {
+   "fieldname": "author_icon",
+   "fieldtype": "Select",
+   "label": "Author Icon",
+   "options": "person\naccount_circle\nface\nbadge\nsupervisor_account\nengineering\npsychology\nworkspace_premium"
+  },
+  {
+   "fieldname": "author_name",
+   "fieldtype": "Data",
+   "label": "Author Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-06 17:22:32.584662",
+ "modified": "2026-07-14 15:39:53.276221",
  "modified_by": "Administrator",
  "module": "Dwell-In-Door",
  "name": "Blogs",

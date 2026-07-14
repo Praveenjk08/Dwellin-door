@@ -10,6 +10,8 @@ website_route_rules = [
     {"from_route": "/properties", "to_route": "/"},
     {"from_route": "/properties/<path:url>", "to_route": "/"},
     {"from_route": "/about-us", "to_route": "/"},
+     {"from_route": "/blogs", "to_route": "/"},
+    {"from_route": "/blogdetailpage/<path:route>", "to_route": "/"},
 ]
 # Apps
 # ------------------

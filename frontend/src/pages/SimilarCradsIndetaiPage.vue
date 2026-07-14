@@ -26,20 +26,21 @@
 
             </div>
 
-            <Carousel :items-to-show="4" :wrap-around="true" :autoplay="3000" class="pb-8" :breakpoints="{
-                0: {
-                    itemsToShow: 1
-                },
-                640: {
-                    itemsToShow: 2
-                },
-                1024: {
-                    itemsToShow: 3
-                },
-                1280: {
-                    itemsToShow: 4.6
-                }
-            }">
+            <Carousel :items-to-show="5" :wrap-around="true" :autoplay="3000" class="pb-8" snapAlign="start"
+                :breakpoints="{
+                    0: {
+                        itemsToShow: 1
+                    },
+                    640: {
+                        itemsToShow: 2
+                    },
+                    1024: {
+                        itemsToShow: 3
+                    },
+                    1280: {
+                        itemsToShow: 4.2
+                    }
+                }">
 
                 <Slide v-for="item in properties" @click="router.push(`/properties/${item.url}`)" :key="item.name">
 
@@ -136,3 +137,9 @@ defineProps({
     }
 });
 </script>
+
+<style>
+.carousel__viewport {
+    overflow: hidden !important;
+}
+</style>

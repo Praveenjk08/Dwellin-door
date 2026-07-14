@@ -6,11 +6,11 @@
             <!-- LEFT -->
             <div class="lg:w-[60%]">
 
-                <p class="text-[#0D5C63] text-[18px] md:text-[25px] font-semibold uppercase mb-3">
+                <p class="text-[#0D5C63] text-[18px] md:text-[22px] font-semibold uppercase mb-3">
                     Our Experience
                 </p>
 
-                <h2 class="text-[28px] md:text-[20px] font-semibold text-black mb-6">
+                <h2 class="text-[18px] md:text-[18px] font-semibold text-black mb-6">
                     A Journey Built on Trust
                 </h2>
 

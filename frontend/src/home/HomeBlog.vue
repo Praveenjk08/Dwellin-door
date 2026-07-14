@@ -31,7 +31,7 @@
 
                 </div>
 
-                <button
+                <button @click="router.push('/blogs')"
                     class="mt-0 lg:mt-0 bg-[#0D1A20] text-white py-3 px-5    rounded-full text-[10px] font-medium hover:bg-[#15242C] transition">
                     Read all articles
                 </button>
@@ -41,7 +41,7 @@
             <!-- Blog Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div v-for="blog in blogs" :key="blog.title" class="group ">
+                <div v-for="blog in blogs" :key="blog.title" class="group " @click="goToBlog(blog.url)">
 
                     <img :src="blog.image"
                         class="w-full h-[200px] object-cover rounded-[20px] group-hover:scale-[1.02] transition duration-300 cursor-pointer" />
@@ -52,6 +52,8 @@
                             <h3 class="text-[14px] font-semibold text-[#222]">
                                 {{ blog.blog_name }}
                             </h3>
+
+                            <!-- <p>{{ blog.url }}</p> -->
 
                             <p class="text-[#8B8B8B] text-[12px] mt-1">
                                 {{ blog.blog_date }}
@@ -77,6 +79,17 @@
 import axios from "axios";
 
 import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const goToBlog = (url) => {
+    router.push({
+        name: "BlogDetailPage",
+        params: {
+            route: url
+        }
+    });
+};
 
 // const blogs = ref([
 //     {

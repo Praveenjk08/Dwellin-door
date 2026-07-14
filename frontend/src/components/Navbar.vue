@@ -41,7 +41,7 @@
                         </span>
                     </RouterLink>
 
-                    <RouterLink to="/amenities" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Blogs
+                    <RouterLink to="/blogs" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Blogs
                     </RouterLink>
                     <RouterLink to="/gallery" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Gallery
                     </RouterLink>
@@ -111,7 +111,7 @@
 
 
 
-                    <RouterLink to="/amenities" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]"
+                    <RouterLink to="/blogs" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]"
                         @click="mobileMenu = false">
                         Blogs
                     </RouterLink>

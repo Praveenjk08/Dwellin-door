@@ -1,5 +1,5 @@
 <template>
-    <section class="py-2 md:py-6 lg:mx-40 px-4 lg:px-0 bg-white">
+    <section class="py-2 md:py-6 lg:mx-20 px-4 lg:px-0 bg-white">
         <div class="max-w-[1400px] mx-auto px-4">
 
             <!-- Heading -->
@@ -22,20 +22,21 @@
             </div>
 
 
-            <Carousel :items-to-show="4" :wrap-around="true" :autoplay="3000" class="pb-8" :breakpoints="{
-                0: {
-                    itemsToShow: 1
-                },
-                640: {
-                    itemsToShow: 2
-                },
-                1024: {
-                    itemsToShow: 3.6
-                },
-                1280: {
-                    itemsToShow: 3.4
-                }
-            }">
+            <Carousel :items-to-show="3" :wrap-around="true" :autoplay="3000" class="pb-8" snapAlign="start"
+                :breakpoints="{
+                    0: {
+                        itemsToShow: 1
+                    },
+                    640: {
+                        itemsToShow: 2
+                    },
+                    1024: {
+                        itemsToShow: 3.6
+                    },
+                    1280: {
+                        itemsToShow: 3.4
+                    }
+                }">
 
                 <Slide v-for="item in propertydetils" @click="router.push(`/properties/${item.url}`)" :key="item.name">
 
@@ -147,3 +148,8 @@ onMounted(() => {
 })
 
 </script>
+<style>
+.carousel__viewport {
+    overflow: hidden !important;
+}
+</style>

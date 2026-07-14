@@ -36,17 +36,17 @@
         </div>
 
         <!-- Top Image -->
-        <div class="lg:col-span-7 relative cursor-pointer" @click="router.push({
+        <div class="lg:col-span-7 relative cursor-pointer overflow-hidden rounded-[20px]" @click="router.push({
           path: '/properties',
           query: {
             location: proprty_type[3]?.location_type
           }
         })">
           <img :src="proprty_type[3]?.images"
-            class="w-full h-[220px] md:h-[260px] object-cover  rounded-[20px] transition-all duration-500 hover:scale-110" />
+            class="w-full h-[180px] sm:h-[220px] md:h-[260px] object-cover rounded-[20px] transition-all duration-500 md:hover:scale-110" />
 
           <span
-            class="absolute top-4 left-4 bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-sm font-medium">
+            class="absolute top-3 left-3 bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs md:text-sm font-medium">
             {{ proprty_type[3]?.location_type }}
           </span>
         </div>

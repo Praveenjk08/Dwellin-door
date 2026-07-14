@@ -9,7 +9,7 @@
                 <div class="relative">
 
                     <img :src="getFileUrl('About-usleft-sde-image.jpeg')" alt="About Dwellin Door"
-                        class="w-full h-[320px] md:h-[450px] rounded-lg object-cover shadow-lg" />
+                        class="w-full h-[320px] md:h-[400px] rounded-lg object-cover shadow-lg" />
 
                     <!-- Floating Card -->
                     <div class="absolute bottom-4 left-4 md:-bottom-6 md:-left-2
@@ -41,33 +41,33 @@
             <!-- Center Content -->
             <div class="lg:col-span-5 text-center lg:text-left">
 
-                <p class="text-[#0D5C63] uppercase font-semibold text-[25px] md:text-[25px] mb-2">
+                <p class="text-[#0D5C63] uppercase font-semibold text-[22px] md:text-[22px] ">
                     Who We Are
                 </p>
 
-                <h2 class="text-[22px] md:text-[22px] font-semibold text-black leading-tight mb-2">
+                <h2 class="text-[22px] md:text-[18px] font-semibold text-black leading-tight mb-2">
                     Your Trusted Real Estate Partner
                 </h2>
 
-                <p class="text-gray-700 leading-7 md:leading-8 mb-3">
+                <p class="text-gray-700 leading-7 md:leading-6 text-[14px] mb-2">
                     Dwellin Door is a trusted real estate platform dedicated to
                     helping individuals and families find their ideal homes,
                     villas, apartments, plots and investment opportunities.
                 </p>
 
-                <p class="text-gray-700 leading-7 md:leading-8 mb-3">
+                <p class="text-gray-700 leading-7 md:leading-6 text-[14px] mb-2">
                     With a commitment to transparency, professionalism and customer
                     satisfaction, we simplify the property search process while
                     delivering personalized guidance at every step.
                 </p>
 
-                <p class="text-gray-700 leading-7 md:leading-8">
+                <p class="text-gray-700 leading-7 md:leading-6 text-[14px]">
                     Our mission is to connect people with spaces that perfectly
                     align with their lifestyle, aspirations and future goals.
                 </p>
 
                 <!-- Signature -->
-                <div class="mt-6 text-center lg:text-left">
+                <div class="mt-3 text-center lg:text-left">
 
                     <p class="text-3xl md:text-4xl italic text-[#0D5C63] font-serif leading-none">
                         Dwellin Door
@@ -91,7 +91,7 @@
             <div class="lg:col-span-3
             lg:border-l border-gray-200
             lg:pl-8
-            space-y-6 md:space-y-8">
+            space-y-6 md:space-y-6">
 
                 <!-- Feature 1 -->
                 <div class="flex gap-4">

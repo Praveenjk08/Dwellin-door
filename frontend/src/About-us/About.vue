@@ -1,7 +1,7 @@
 <template>
     <section class="bg-white overflow-hidden mb-10">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 md:h-[500px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 md:h-[400px]">
 
             <!-- Left Content -->
             <div class="relative bg-[#FAF8F2] flex items-center">
@@ -35,12 +35,12 @@
                     <div class="flex flex-wrap gap-3">
 
                         <button
-                            class="bg-[#0D5C63] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#08474d] transition">
+                            class="bg-[#0D5C63] text-white px-4 py-2 rounded-xl font-semibold hover:bg-[#08474d] transition">
                             Explore Properties
                         </button>
 
                         <button
-                            class="border border-[#0D5C63] text-[#0D5C63] px-6 py-3 rounded-xl font-semibold hover:bg-[#0D5C63] hover:text-white transition">
+                            class="border border-[#0D5C63] text-[#0D5C63] px-4 py-2 rounded-xl font-semibold hover:bg-[#0D5C63] hover:text-white transition">
                             Contact Us
                         </button>
 
@@ -51,7 +51,7 @@
             </div>
 
             <!-- Right Image -->
-            <div class="h-[280px] sm:h-[350px] md:h-[500px] overflow-hidden">
+            <div class="h-[280px] sm:h-[350px] md:h-[400px] overflow-hidden">
 
                 <img :src="getFileUrl('About-us-page-banner.jpeg')" alt="Luxury Villa"
                     class="w-full h-full object-cover" />
