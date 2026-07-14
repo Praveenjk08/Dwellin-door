@@ -154,7 +154,7 @@
                             </div>
 
                             <!-- Property Details -->
-                            <div class="grid grid-cols-3 mt-5 pt-5 border-t border-gray-200">
+                            <div class="grid grid-cols-3 mt-2 pt-5 border-t border-gray-200">
 
                                 <div class="text-center">
 

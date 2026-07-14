@@ -23,6 +23,18 @@ const routes = [
     component: () => import('@/pages/DetailPage.vue'),
     props: true
   },
+  {
+    path: "/about-us",
+    name: "About-Us",
+    component: () => import('@/pages/About-Us.vue')
+
+  },
+  {
+    path: "/about-us",
+    name: "About-Us",
+    component: () => import('@/About-us/About.vue')
+
+  },
 
 ]
 

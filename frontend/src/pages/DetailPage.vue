@@ -18,7 +18,7 @@
                     <div class="mt-1 w-full">
 
 
-                        <Carousel :items-to-show="7" :wrap-around="true" :autoplay="1000" :key="project.project_name"
+                        <Carousel :items-to-show="7" :wrap-around="true" :autoplay="2000" :key="project.project_name"
                             :pause-autoplay-on-hover="true" :breakpoints="{
                                 0: {
                                     itemsToShow: 2.8

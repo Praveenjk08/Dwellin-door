@@ -229,7 +229,7 @@ onUnmounted(() => {
 
                 </div> -->
                 <div class="h-f rounded-3xl">
-                    <Carousel :items-to-show="1" :wrap-around="true" autoplay="1000">
+                    <Carousel :items-to-show="1" :wrap-around="true" autoplay="4000">
                         <Slide v-for="(image, index) in images" :key="index">
                             <img :src="image" class="w-full md:h-[500px] rounded-[10px] object-cover" />
                         </Slide>

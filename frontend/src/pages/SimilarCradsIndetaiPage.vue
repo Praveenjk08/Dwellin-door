@@ -26,7 +26,7 @@
 
             </div>
 
-            <Carousel :items-to-show="4" :wrap-around="true" :autoplay="1000" class="pb-8" :breakpoints="{
+            <Carousel :items-to-show="4" :wrap-around="true" :autoplay="3000" class="pb-8" :breakpoints="{
                 0: {
                     itemsToShow: 1
                 },

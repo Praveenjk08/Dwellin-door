@@ -24,28 +24,28 @@
                     </RouterLink>
 
 
-                    <RouterLink to="/about-us" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]">About Us
+                    <RouterLink to="/about-us" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">About Us
                     </RouterLink>
                     <RouterLink to="/properties"
-                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#C9A227] transition-colors">
+                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#0D5C63] transition-colors">
                         <span>Properties</span>
                         <span class="material-symbols-outlined text-[18px]">
                             keyboard_arrow_down
                         </span>
                     </RouterLink>
                     <RouterLink to="/properties"
-                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#C9A227] transition-colors">
+                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#0D5C63] transition-colors">
                         <span>Services</span>
                         <span class="material-symbols-outlined text-[18px]">
                             keyboard_arrow_down
                         </span>
                     </RouterLink>
 
-                    <RouterLink to="/amenities" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]">Blogs
+                    <RouterLink to="/amenities" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Blogs
                     </RouterLink>
-                    <RouterLink to="/gallery" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]">Gallery
+                    <RouterLink to="/gallery" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Gallery
                     </RouterLink>
-                    <RouterLink to="/contact-us" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]">Contact
+                    <RouterLink to="/contact-us" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Contact
                     </RouterLink>
                 </div>
 
@@ -80,12 +80,12 @@
                 <div class="flex flex-col p-5 space-y-4 text-[#1B1B1B] font-medium">
 
                     <RouterLink to="/" @click="mobileMenu = false"
-                        class="font-medium text-[#1B1B1B] hover:text-[#C9A227]">
+                        class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">
                         Dwell In Door
                     </RouterLink>
 
 
-                    <RouterLink to="/about-us" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]"
+                    <RouterLink to="/about-us" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]"
                         @click="mobileMenu = false">
                         About Us
                     </RouterLink>
@@ -93,14 +93,14 @@
                         Projects
                     </RouterLink> -->
                     <RouterLink to="/properties" @click="mobileMenu = false"
-                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#C9A227] transition-colors">
+                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#0D5C63] transition-colors">
                         <span>Properties</span>
                         <span class="material-symbols-outlined text-[18px]">
                             keyboard_arrow_down
                         </span>
                     </RouterLink>
                     <RouterLink to="/services" @click="mobileMenu = false"
-                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#C9A227] transition-colors">
+                        class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#0D5C63] transition-colors">
                         <span>Services</span>
                         <span class="material-symbols-outlined text-[18px]">
                             keyboard_arrow_down
@@ -111,17 +111,17 @@
 
 
 
-                    <RouterLink to="/amenities" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]"
+                    <RouterLink to="/amenities" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]"
                         @click="mobileMenu = false">
                         Blogs
                     </RouterLink>
 
-                    <RouterLink to="/gallery" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]"
+                    <RouterLink to="/gallery" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]"
                         @click="mobileMenu = false">
                         Gallery
                     </RouterLink>
 
-                    <RouterLink to="/contact-us" class="font-medium text-[#1B1B1B] hover:text-[#C9A227]"
+                    <RouterLink to="/contact-us" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]"
                         @click="mobileMenu = false">
                         Contact
                     </RouterLink>
