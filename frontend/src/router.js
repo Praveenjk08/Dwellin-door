@@ -46,6 +46,12 @@ const routes = [
     component: () => import('@/blog/BlogDetailPage.vue'),
     props: true
   },
+  {
+    path: "/contact-us",
+    name: "Contact-Us",
+    component: () => import('@/pages/Contact-Us.vue')
+
+  },
 
 ]
 

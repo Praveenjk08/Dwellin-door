@@ -503,7 +503,7 @@
                         </div>
 
                         <div class="flex-1">
-                            <Carousel :items-to-show="1" :wrap-around="true" :autoplay="1000"
+                            <Carousel :items-to-show="1" :wrap-around="true" :autoplay="3000"
                                 :key="project.project_name" :pause-autoplay-on-hover="true">
 
                                 <Slide v-for="(item, index) in project.floor_plan" :key="index">

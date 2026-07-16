@@ -33,13 +33,13 @@
                             keyboard_arrow_down
                         </span>
                     </RouterLink>
-                    <RouterLink to="/properties"
+                    <!-- <RouterLink to="/properties"
                         class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#0D5C63] transition-colors">
                         <span>Services</span>
                         <span class="material-symbols-outlined text-[18px]">
                             keyboard_arrow_down
                         </span>
-                    </RouterLink>
+                    </RouterLink> -->
 
                     <RouterLink to="/blogs" class="font-medium text-[#1B1B1B] hover:text-[#0D5C63]">Blogs
                     </RouterLink>
@@ -99,13 +99,13 @@
                             keyboard_arrow_down
                         </span>
                     </RouterLink>
-                    <RouterLink to="/services" @click="mobileMenu = false"
+                    <!-- <RouterLink to="/services" @click="mobileMenu = false"
                         class="flex items-center gap-1 font-medium text-[#1B1B1B] hover:text-[#0D5C63] transition-colors">
                         <span>Services</span>
                         <span class="material-symbols-outlined text-[18px]">
                             keyboard_arrow_down
                         </span>
-                    </RouterLink>
+                    </RouterLink> -->
 
 
 
