@@ -39,26 +39,26 @@ def lead_add_api():
 #     frappe.db.commit()
 
 #     return {"message": "Added Lead Successfully"}
-# @frappe.whitelist(allow_guest=True)
-# def video_meeting_shedule():
-#     data = frappe.form_dict
+@frappe.whitelist(allow_guest=True)
+def video_meeting_shedule():
+    data = frappe.form_dict
 
-#     add_lead = frappe.get_doc({
-#         "doctype": "CRM Lead",
-#         "first_name": data.get("name"),
-#         "mobile_no": data.get("phone"),
-#         "email": data.get("email"),
-#         "custom_virtual_meeting_type": data.get("visist_type"),
-#         "custom_visting_time": data.get("visiting_time"),
-#         "custom_project_web_name": data.get("project_name"),
-#         "custom_services":"Website Enquiry",
-#         "source": "Website",
-#     })
+    add_lead = frappe.get_doc({
+        "doctype": "CRM Lead",
+        "first_name": data.get("name"),
+        "mobile_no": data.get("phone"),
+        "email": data.get("email"),
+        "custom_virtual_meeting_type": data.get("visist_type"),
+        "custom_visting_time": data.get("visiting_time"),
+        "custom_project_web_name": data.get("project_name"),
+        "custom_services":"Website Enquiry",
+        "source": "Website",
+    })
 
-#     add_lead.insert(ignore_permissions=True)
-#     frappe.db.commit()
+    add_lead.insert(ignore_permissions=True)
+    frappe.db.commit()
 
-#     return {"message": "Thank you for your interest. Our team will contact you soon to confirm your virtual tour."}
+    return {"message": "Thank you for your interest. Our team will contact you soon to confirm your virtual tour."}
 
 @frappe.whitelist(allow_guest=True)
 def detaip_page_coatct():
