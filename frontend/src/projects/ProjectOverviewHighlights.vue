@@ -74,7 +74,7 @@
                 </div>
 
                 <!-- RIGHT -->
-                <div class="lg:col-span-8 ">
+                <div class="lg:col-span-8" v-if="project.project_highlights?.length">
                     <div class="text-center mb-4">
                         <h2 class="text-[22px] font-bold text-[#1B1B1B]">
                             Project Highlights

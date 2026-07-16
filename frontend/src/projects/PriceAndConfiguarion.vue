@@ -1,6 +1,7 @@
 <template>
     <!-----Section-3----->
-    <section class="my-10 bg-white mx-auto md:mx-10 ">
+    <section class="my-10 bg-white mx-auto md:mx-10 "
+        v-if="project.property_configuartion?.length && project.property_amenities?.length">
         <div class="max-w-[1400px] mx-auto px-4">
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">

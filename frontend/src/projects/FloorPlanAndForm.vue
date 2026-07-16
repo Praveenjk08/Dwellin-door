@@ -1,6 +1,6 @@
 <template>
     <!--Next section-4-->
-    <section class="mb-10 md:mx-10 bg-white">
+    <section class="mb-10 md:mx-10 bg-white" v-if="project.floor_plan?.length">
         <div class="max-w-[1400px] mx-auto px-4">
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
@@ -235,6 +235,7 @@ const submitEnquiry = async () => {
                 project_name: props.project.project_name
             }
         );
+        console.log(response.data);
 
         enquirySuccess.value =
             response?.data?.message?.message ||

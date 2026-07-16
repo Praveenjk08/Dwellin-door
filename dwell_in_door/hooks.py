@@ -14,6 +14,21 @@ website_route_rules = [
     {"from_route": "/blogdetailpage/<path:route>", "to_route": "/"},
     {"from_route":"/contact-us","to_route": "/"}
 ]
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["dt", "=", "CRM Lead"]
+        ]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["doc_type", "=", "CRM Lead"]
+        ]
+    }
+]
 # Apps
 # ------------------
 

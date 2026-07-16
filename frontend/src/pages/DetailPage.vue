@@ -33,7 +33,7 @@
 
                     <!-- gallery -->
                     <!-- <div class=" grid grid-cols-6 gap-3 mt-4"> -->
-                    <div class="mt-1 w-full">
+                    <div class="mt-1 w-full" v-if="project.gallery_images?.length">
 
 
                         <Carousel :items-to-show="7" :wrap-around="true" :autoplay="2000" :key="project.project_name"
