@@ -27,6 +27,12 @@ fixtures = [
         "filters": [
             ["doc_type", "=", "CRM Lead"]
         ]
+    },
+      {
+        "dt": "Client Script",
+        "filters": [
+            ["dt", "=", "Blogs"]
+        ]
     }
 ]
 # Apps

@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Blogs",
+  "enabled": 1,
+  "modified": "2026-07-14 11:54:14.206766",
+  "module": null,
+  "name": "Blog",
+  "script": "frappe.ui.form.on('Blogs', {\r\n    title: function(frm) {\r\n        if (frm.doc.blog_name) {\r\n            let slug = frm.doc.blog_name\r\n                .toLowerCase()\r\n                .trim()\r\n                .replace(/\\s+/g, '-')\r\n                .replace(/[^\\w-]/g, '');\r\n\r\n            frm.set_value('url', slug);\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ }
+]
