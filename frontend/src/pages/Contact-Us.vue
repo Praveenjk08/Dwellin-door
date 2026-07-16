@@ -141,6 +141,7 @@
                             class="border border-gray-200 rounded-xl px-4 py-2 w-full" required />
 
                         <select v-model="form.service" class="border border-gray-200 rounded-xl px-4 py-2 w-full">
+                            <option value="Others">Others</option>
                             <option value="Interested In">Interested In</option>
                             <option value="Real Estate">Real Estate</option>
                             <option value="Constrcution">Constrcution</option>
@@ -294,7 +295,7 @@ const form = reactive({
     name: "",
     phone: "",
     email: "",
-    service: "",
+    service: "Others",
 
 });
 

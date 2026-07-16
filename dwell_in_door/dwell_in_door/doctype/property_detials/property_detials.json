@@ -40,7 +40,9 @@
   "section_break_hhib",
   "floor_plan",
   "section_break_eqlh",
-  "property_location_details"
+  "property_location_details",
+  "section_break_wrvw",
+  "cursol_project_images"
  ],
  "fields": [
   {
@@ -216,12 +218,22 @@
    "fieldtype": "Link",
    "label": "Property Location Type",
    "options": "Property Located Type"
+  },
+  {
+   "fieldname": "section_break_wrvw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cursol_project_images",
+   "fieldtype": "Table",
+   "label": "Cursol Project Images",
+   "options": "Cursol Project Images"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-10 15:52:12.699678",
+ "modified": "2026-07-16 16:00:06.183836",
  "modified_by": "Administrator",
  "module": "Dwell-In-Door",
  "name": "Property Detials",
