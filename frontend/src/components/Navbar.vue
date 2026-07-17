@@ -9,7 +9,7 @@
 
                 <!-- Logo -->
                 <RouterLink to="/" class="flex-shrink-0">
-                    <img :src="getFileUrl('dwellin-door-logo.png')" alt="Dwellin Door"
+                    <img :src="getFileUrl('logo-with-some-changes.png')" alt="Dwellin Door"
                         class="h-[70px] w-auto object-contain" />
                 </RouterLink>
 
@@ -51,9 +51,9 @@
 
                 <!-- Desktop Button -->
                 <div class="hidden lg:flex items-center">
-                    <button
+                    <button @click="router.push('/contact-us')"
                         class="bg-[#0D5C63] text-white text-sm px-5 py-2 rounded-xl font-medium shadow-sm hover:bg-[#084950] transition">
-                        <!-- Enquire Now -->Login
+                        Enquire Now
                     </button>
                 </div>
 
@@ -126,7 +126,8 @@
                         Contact
                     </RouterLink>
 
-                    <button class="bg-[#0D5C63] text-white py-3 rounded-xl font-medium">
+                    <button @click="router.push('/contact-us')"
+                        class="bg-[#0D5C63] text-white py-3 rounded-xl font-medium">
                         Enquire Now
                     </button>
 
@@ -141,6 +142,7 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
+import router from "../router";
 const route = useRoute()
 
 const mobileMenu = ref(false);

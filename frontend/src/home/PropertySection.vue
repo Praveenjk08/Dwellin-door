@@ -28,7 +28,7 @@
           <!-- <button class="mt-5 bg-[#35CAA0] hover:bg-[#084950] text-white px-5 py-3 rounded-full font-medium transition">
             View Properties
           </button> -->
-          <button
+          <button @click="router.push('/properties')"
             class="mt-4 bg-[#35CAA0] hover:bg-[#084950] text-white px-4 py-2 rounded-full  font-medium transition">
             <span class="text-[12px] py-2 px-2">View Properties</span>
           </button>

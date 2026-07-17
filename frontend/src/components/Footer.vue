@@ -72,7 +72,7 @@
                         success—contact us today.
                     </h2>
 
-                    <button class="mt-4
+                    <button @click="router.push('/contact-us')" class="mt-4
                         bg-[#16D6A4]
                         hover:bg-[#14c397]
                         px-5 py-2
@@ -129,6 +129,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import router from '../router';
 
 
 const sucessMessage = ref("")

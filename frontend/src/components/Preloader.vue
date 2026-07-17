@@ -8,12 +8,12 @@
 
         <!-- Left Logo Half -->
         <div class="logo-half left-half" :class="{ 'open-left': startOpen }">
-            <img :src="getFileUrl('dwellin-door-logo.png')" alt="Dwellin Door" class="logo-img" />
+            <img :src="getFileUrl('logo-with-some-changes.png')" alt="Dwellin Door" class="logo-img" />
         </div>
 
         <!-- Right Logo Half -->
         <div class="logo-half right-half" :class="{ 'open-right': startOpen }">
-            <img :src="getFileUrl('dwellin-door-logo.png')" alt="Dwellin Door" class="logo-img" />
+            <img :src="getFileUrl('logo-with-some-changes.png')" alt="Dwellin Door" class="logo-img" />
         </div>
 
     </div>

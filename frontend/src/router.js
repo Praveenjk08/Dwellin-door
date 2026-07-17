@@ -52,6 +52,11 @@ const routes = [
     component: () => import('@/pages/Contact-Us.vue')
 
   },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    component: () => import('@/pages/Gallery.vue')
+  }
 
 ]
 

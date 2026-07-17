@@ -27,17 +27,17 @@
           tracking-[-0.02em]
           font-semibold
           text-white">
-          Futuristic <br />
-          Haven
+          Nature At <br />
+          It's Best
         </h1>
 
         <div class="flex flex-wrap items-center gap-3 md:gap-4 mt-6">
 
-          <button class="bg-white text-black px-4 py-2 rounded-full font-medium">
+          <button class="bg-white text-black px-4 py-2 rounded-full font-medium" @click="router.push('/contact-us')">
             Get in touch
           </button>
 
-          <button class="border border-white text-white px-4 py-2 rounded-full">
+          <button class="border border-white text-white px-4 py-2 rounded-full" @click="router.push('/properties')">
             View Details
           </button>
 
@@ -49,16 +49,16 @@
          bg-white/25  rounded-xl shadow-xl p-3 items-center gap-3 w-[700px]">
 
         <input type="text" placeholder="Location"
-          class="w-[180px] bg-white/25 hover:bg-white border rounded-xl px-4 py-2 outline-none">
+          class="w-[180px] bg-white/65 hover:bg-white border rounded-xl px-4 py-2 outline-none">
 
-        <select class="w-[150px] border bg-white/25 hover:bg-white  rounded-xl px-4 py-2 outline-none">
+        <select class="w-[150px] border bg-white/65 hover:bg-white  rounded-xl px-4 py-2 outline-none">
           <option>Type</option>
           <option>Apartment</option>
           <option>Villa</option>
           <option>Plot</option>
         </select>
 
-        <select class="w-[150px] bg-white/25 hover:bg-white border rounded-xl px-4 py-2 outline-none">
+        <select class="w-[150px] bg-white/65 hover:bg-white border rounded-xl px-4 py-2 outline-none">
           <option>Budget</option>
           <option>₹20L - ₹50L</option>
           <option>₹50L - ₹1Cr</option>
@@ -224,6 +224,7 @@
 
 <script setup>
 
+import router from '../router.js';
 import AboutTheDwellin from './AboutTheDwellin.vue';
 import CTA from './CTA.vue';
 import HomeBlog from './HomeBlog.vue';

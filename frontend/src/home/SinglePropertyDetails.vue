@@ -346,7 +346,8 @@ onUnmounted(() => {
 
                     <div class="flex items-center gap-6 mt-5">
 
-                        <button class="bg-[#17C08E] text-white px-4 py-2 rounded-full font-medium">
+                        <button class="bg-[#17C08E] text-white px-4 py-2 rounded-full font-medium"
+                            @click="router.push('/contact-us')">
 
                             <span class="text-sm">
                                 Get in touch
@@ -380,6 +381,7 @@ onUnmounted(() => {
 import { ref, onMounted, onUnmounted } from "vue";
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
+import router from "../router";
 
 const images = [
     "/files/singleimage.jpeg",

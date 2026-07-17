@@ -21,7 +21,7 @@
 
                     </h2>
 
-                    <button
+                    <button @click="router.push('/contact-us')"
                         class="mt-16 md:mt-20 bg-white text-[#111] px-4 py-2 text-[12px] rounded-full font-medium hover:bg-gray-100 transition">
 
                         Get in touch
@@ -63,6 +63,8 @@
     </section>
 </template>
 <script setup>
+import router from '../router';
+
 const getFiles = (file) => {
 
     return `${window.location.origin}/files/${file}`
