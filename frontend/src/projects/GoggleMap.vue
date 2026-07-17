@@ -308,7 +308,7 @@
                     </button> -->
                     <button @click="submitForm" :disabled="loading"
                         class="flex-1 bg-gradient-to-r from-[#0D5C63] to-[#084950] text-white py-2 rounded-xl font-medium shadow-lg hover:scale-[1.02] transition disabled:opacity-50">
-                        {{ loading ? "Scheduling..." : "Schedule Visit" }}
+                        {{ loading ? "Scheduling..." : "Schedule" }}
                     </button>
 
                 </div>
