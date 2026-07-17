@@ -6,18 +6,19 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_rghf"
+  "iamge"
  ],
  "fields": [
   {
-   "fieldname": "section_break_rghf",
-   "fieldtype": "Section Break"
+   "fieldname": "iamge",
+   "fieldtype": "Attach Image",
+   "label": "Iamge"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-17 11:07:09.036548",
+ "modified": "2026-07-17 20:39:00.006353",
  "modified_by": "Administrator",
  "module": "Dwell-In-Door",
  "name": "Gallery Page",
