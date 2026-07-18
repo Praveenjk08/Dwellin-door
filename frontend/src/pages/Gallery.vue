@@ -30,8 +30,9 @@
                             <!-- 250+ -->{{ galleryCount }}
                         </h3>
                         <p class="text-gray-500 mt-2">
-                            Photos
+                            {{ tagsname }} Images
                         </p>
+
                     </div>
                 </div>
 
@@ -110,6 +111,7 @@ const get_all_tags = async () => {
 
 
 const gallery = ref([])
+const tagsname = ref("")
 
 const galleryCount = ref(0)
 
@@ -119,7 +121,9 @@ const getGalleryByTag = async (tag) => {
         const response = await axios.get(
             `/api/method/dwell_in_door.api.gallery.get_gallery_by_tag?tag=${tag}`
         )
+        console.log(tag);
 
+        tagsname.value = tag
         gallery.value = response.data.message
         galleryCount.value = response.data.message.length
 
