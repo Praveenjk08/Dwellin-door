@@ -63,7 +63,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-                <div v-for="(item, index) in gallery" :key="index"
+                <div v-for="(item, index) in paginatedGallery" :key="index"
                     class="relative group overflow-hidden rounded-[24px]">
 
                     <img :src="item.iamge"
@@ -79,6 +79,16 @@
                 </div>
 
             </div>
+            <div class="flex justify-center mt-10">
+                <Paginate :page-count="totalPages" :click-handler="changePage" :force-page="currentPage - 1"
+                    :prev-text="'Previous'" :next-text="'Next'" :page-range="3" :margin-pages="1"
+                    :break-view-text="'...'" :container-class="'flex items-center justify-center gap-2 mt-10'"
+                    :page-class="'inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-300 hover:bg-[#0D5C63] hover:text-white transition-all duration-300 cursor-pointer'"
+                    :page-link-class="'w-full h-full flex items-center justify-center'"
+                    :active-class="'bg-[#0D5C63] text-white border-[#0D5C63]'"
+                    :prev-class="'inline-flex items-center justify-center px-4 h-10 rounded-lg border border-gray-300 hover:bg-[#0D5C63] hover:text-white transition-all duration-300 cursor-pointer'"
+                    :next-class="'inline-flex items-center justify-center px-4 h-10 rounded-lg border border-gray-300 hover:bg-[#0D5C63] hover:text-white transition-all duration-300 cursor-pointer'" />
+            </div>
 
         </section>
 
@@ -88,9 +98,22 @@
 
 <script setup>
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
+import Paginate from "vuejs-paginate-next"
 
 const tags = ref([])
+
+const currentPage = ref(1)
+const itemsPerPage = 12
+const paginatedGallery = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage
+    const end = start + itemsPerPage
+    return gallery.value.slice(start, end)
+})
+
+const totalPages = computed(() => {
+    return Math.ceil(gallery.value.length / itemsPerPage)
+})
 
 const get_all_tags = async () => {
     try {
@@ -114,6 +137,10 @@ const gallery = ref([])
 const tagsname = ref("")
 
 const galleryCount = ref(0)
+const changePage = (page) => {
+    // console.log("Page:", page)
+    currentPage.value = page
+}
 
 const getGalleryByTag = async (tag) => {
     try {
@@ -126,6 +153,8 @@ const getGalleryByTag = async (tag) => {
         tagsname.value = tag
         gallery.value = response.data.message
         galleryCount.value = response.data.message.length
+        // Reset to first page whenever a new tag is selected
+        currentPage.value = 1
 
     } catch (error) {
         console.log(error)
