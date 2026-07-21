@@ -82,7 +82,7 @@
 
                     <button @click="router.push('/contact-us')" class="mt-4
                         bg-[#16D6A4]
-                        hover:bg-[#14c397]
+                        hover:bg-[#14c397] 
                         px-5 py-2
                         rounded-full
                         text-xs
@@ -184,6 +184,7 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import router from '../router.js';
 
 const email = ref("");
 const successMessage = ref("");
