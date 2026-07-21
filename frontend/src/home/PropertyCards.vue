@@ -1,6 +1,6 @@
 <template>
-    <section class="py-2 md:py-6 lg:mx-20 px-4 lg:px-0 bg-white">
-        <div class="max-w-[1400px] mx-auto px-4">
+    <section class="py-2 md:py-6 lg:mx-40 px-4 lg:px-0 bg-white">
+        <div class="w-full mx-auto px-4">
 
             <!-- Heading -->
             <div class="text-center mb-7">
@@ -45,7 +45,7 @@
                         <div class="rounded-[16px] shadow-lg bg-white overflow-hidden cursor-pointer min-h-[370px]">
 
                             <!-- Image -->
-                            <img :src="item.image" alt="" class="w-full h-[190px] object-cover">
+                            <img :src="item.image" alt="" class="w-full h-[190px] object-cover p-2 rounded-[18px]">
 
                             <!-- Content -->
                             <div class="p-4">

@@ -70,11 +70,17 @@
                         class="w-full h-[240px] object-cover rounded-[24px] group-hover:scale-105 transition duration-500" />
 
                     <div
-                        class="absolute top-3 right-3 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                        <span class="material-symbols-outlined text-gray-500">
-                            favorite
-                        </span>
-                    </div>
+    class="group absolute top-3 right-3 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer"
+>
+    <span
+        class="material-symbols-outlined text-gray-500 group-hover:text-pink-500"
+        style="font-variation-settings: 'FILL' 0;"
+        onmouseover="this.style.fontVariationSettings=`'FILL' 1`"
+        onmouseout="this.style.fontVariationSettings=`'FILL' 0`"
+    >
+        favorite
+    </span>
+</div>
 
                 </div>
 

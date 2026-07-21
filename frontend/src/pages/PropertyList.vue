@@ -404,7 +404,16 @@ onMounted(() => {
 
         applyFilters()
 
-    } else {
+    }
+    else if (route.query.location_type) {
+
+        selectedLocation.value = [route.query.location_type]
+
+        applyFilters()
+
+    } 
+    
+    else {
 
         get_all_property_detils_api()
 
