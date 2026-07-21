@@ -1,6 +1,6 @@
 <template>
     <section class="bg-[#08141A] overflow-hidden py-10 lg:py-5 mb-20 relative">
-
+<!--tset-->
         <div class="max-w-[1400px] mx-auto px-4">
 
             <div class="grid grid-cols-1 lg:grid-cols-[55%_35%] gap-8 lg:gap-16 items-center">

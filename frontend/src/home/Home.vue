@@ -18,9 +18,9 @@
       <!-- Content -->
       <div class="absolute left-6 md:left-12 lg:left-[140px] top-20 md:top-36 z-10">
 
-        <p class="text-white text-xs md:text-sm mb-4">
+        <!-- <p class="text-white text-xs md:text-sm mb-4">
           Palm Springs, CA
-        </p>
+        </p> -->
 
         <h1 class="text-[38px] md:text-[50px] lg:text-[60px]
           leading-[100%]
@@ -28,7 +28,7 @@
           font-semibold
           text-white">
           Nature At <br />
-          It's Best
+          It's Best !
         </h1>
 
         <div class="flex flex-wrap items-center gap-3 md:gap-4 mt-6">

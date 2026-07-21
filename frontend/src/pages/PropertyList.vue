@@ -234,10 +234,10 @@ const selectedBhk = ref([])
 const selectedBedroom = ref([])
 
 const locations = [
-    'East',
-    'West',
-    'North',
-    'South'
+    'Bangalore East',
+    'Bangalore West',
+    'Bangalore North',
+    'Bangalore South'
 ]
 
 const propertyTypes = [
