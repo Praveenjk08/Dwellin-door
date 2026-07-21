@@ -9,6 +9,7 @@ import frappe
 #     email_1.insert(ignore_permissions=True)
 #     frappe.db.commit()
 #     return "Subscribed successfully"
+#8888
 @frappe.whitelist(allow_guest=True)
 def add_email(email):
 
