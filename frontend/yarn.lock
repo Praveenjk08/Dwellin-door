@@ -1948,6 +1948,13 @@ vite@^2.5.10, vite@^2.7.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
+vue-awesome-paginate@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/vue-awesome-paginate/-/vue-awesome-paginate-1.2.0.tgz"
+  integrity sha512-+eYXo666E2n8NhpEPIdJcQEoJBDLo7wMGv45D2+i/VDntz2o422jRNcMQ7VESMgAcKyReWMwb9m99esCjsO/hw==
+  dependencies:
+    vue "^3.4.30"
+
 vue-component-type-helpers@^3.0.0:
   version "3.3.7"
   resolved "https://registry.npmjs.org/vue-component-type-helpers/-/vue-component-type-helpers-3.3.7.tgz"
@@ -1960,7 +1967,7 @@ vue-router@^4.0.12:
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.18"
 
-vue@^3.0.0, vue@^3.2.0, vue@^3.2.25, vue@^3.5.0, vue@3.5.39, vue@3.x:
+vue@^3.0.0, vue@^3.2.0, vue@^3.2.25, vue@^3.4.30, vue@^3.5.0, vue@3.5.39, vue@3.x:
   version "3.5.39"
   resolved "https://registry.npmjs.org/vue/-/vue-3.5.39.tgz"
   integrity sha512-xmZCYabFGcirU8r0fTuvl/LICc1OU620rnqepaJDL/a141ZigkG7AyaxQLdqJ02ZRYzWe6YPaDHeQx7MfknQfA==

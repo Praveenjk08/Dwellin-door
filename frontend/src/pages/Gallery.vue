@@ -79,16 +79,20 @@
                 </div>
 
             </div>
-            <div class="flex justify-center mt-10">
-                <Paginate :page-count="totalPages" :click-handler="changePage" :force-page="currentPage - 1"
-                    :prev-text="'Previous'" :next-text="'Next'" :page-range="3" :margin-pages="1"
-                    :break-view-text="'...'" :container-class="'flex items-center justify-center gap-2 mt-10'"
-                    :page-class="'inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-300 hover:bg-[#0D5C63] hover:text-white transition-all duration-300 cursor-pointer'"
-                    :page-link-class="'w-full h-full flex items-center justify-center'"
-                    :active-class="'bg-[#0D5C63] text-white border-[#0D5C63]'"
-                    :prev-class="'inline-flex items-center justify-center px-4 h-10 rounded-lg border border-gray-300 hover:bg-[#0D5C63] hover:text-white transition-all duration-300 cursor-pointer'"
-                    :next-class="'inline-flex items-center justify-center px-4 h-10 rounded-lg border border-gray-300 hover:bg-[#0D5C63] hover:text-white transition-all duration-300 cursor-pointer'" />
-            </div>
+         <div class="flex justify-center mt-10">
+
+  <VueAwesomePaginate
+    v-model="currentPage"
+    :total-items="gallery.length"
+    :items-per-page="itemsPerPage"
+    :max-pages-shown="5"
+    :show-ending-buttons="true"
+    :show-breakpoint-buttons="true"
+    back-button-text="Previous"
+    next-button-text="Next"
+/>
+
+</div>
 
         </section>
 
@@ -96,7 +100,7 @@
 
     </template>
 
-<script setup>
+<!-- <script setup>
 import axios from 'axios';
 import { onMounted, ref, computed } from 'vue';
 import Paginate from "vuejs-paginate-next"
@@ -138,7 +142,7 @@ const tagsname = ref("")
 
 const galleryCount = ref(0)
 const changePage = (page) => {
-    // console.log("Page:", page)
+   
     currentPage.value = page
 }
 
@@ -169,4 +173,130 @@ onMounted(() => {
 
 
 
+</script> -->
+
+<script setup>
+import axios from "axios";
+// import "vue-awesome-paginate/dist/style.css";
+import { ref, computed, onMounted } from "vue";
+// import VueAwesomePaginate from "vue-awesome-paginate";
+
+const tags = ref([]);
+const gallery = ref([]);
+const tagsname = ref("");
+const galleryCount = ref(0);
+
+// Pagination
+const currentPage = ref(1);
+const itemsPerPage = 12;
+
+const paginatedGallery = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return gallery.value.slice(start, end);
+});
+
+const totalPages = computed(() => {
+    return Math.ceil(gallery.value.length / itemsPerPage);
+});
+
+// Get All Tags
+const get_all_tags = async () => {
+    try {
+        const response = await axios.get(
+            "/api/method/dwell_in_door.api.gallery.get_all_tags"
+        );
+
+        tags.value = response.data.message;
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// Get Gallery By Tag
+const getGalleryByTag = async (tag) => {
+    try {
+
+        const response = await axios.get(
+            `/api/method/dwell_in_door.api.gallery.get_gallery_by_tag?tag=${tag}`
+        );
+
+        tagsname.value = tag;
+        gallery.value = response.data.message;
+        galleryCount.value = response.data.message.length;
+
+        // Reset to first page
+        currentPage.value = 1;
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+onMounted(() => {
+    get_all_tags();
+    getGalleryByTag("All");
+});
 </script>
+<style scoped>
+:deep(.pagination-container) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+:deep(.paginate-buttons) {
+    min-width: 42px;
+    height: 42px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: #fff;
+    color: #374151;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+:deep(.paginate-buttons:hover) {
+    background: #0D5C63;
+    color: #fff;
+    border-color: #0D5C63;
+}
+
+:deep(.active-page) {
+    background: #0D5C63 !important;
+    color: #fff !important;
+    border-color: #0D5C63 !important;
+}
+
+:deep(.back-button),
+:deep(.next-button) {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+}
+
+:deep(.back-button:disabled),
+:deep(.next-button:disabled) {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+:deep(.ellipse) {
+    padding: 0 6px;
+    color: #6b7280;
+    font-weight: 600;
+}
+</style>

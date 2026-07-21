@@ -25,7 +25,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-10">
 
-            <div v-for="blog in duplicatedBlogs" :key="blog.title" class="group px-4 rounded-xl  shadow-md"
+            <div v-for="blog in blogs" :key="blog.title" class="group px-4 rounded-xl  shadow-md"
                 @click="goToBlog(blog.url)">
 
                 <img :src="blog.image"
@@ -84,10 +84,11 @@ const get_all_blogs = async () => {
             "/api/method/dwell_in_door.api.blogs.get_all_blogs"
         );
 
-        blogs.value = [
-            ...response.data.message,
-            ...response.data.message
-        ];
+        // blogs.value = [
+        //     ...response.data.message,
+        //     ...response.data.message
+        // ];
+        blogs.value = response.data.message;
     } catch (error) {
         console.log(error);
     }

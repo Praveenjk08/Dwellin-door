@@ -2,7 +2,7 @@
   <section class="">
 
     <!-- Hero Banner -->
-    <div class="relative h-[400px] md:h-[500px] overflow-hidden">
+    <div class="relative h-[400px] md:h-[500px] overflow-visible">
 
       <!-- Image -->
       <img :src="getFileUrl('home-banner-image-desktopece40f.png')" alt="Banner"
@@ -45,30 +45,93 @@
 
       </div>
 
-      <div class="hidden lg:flex absolute top-[300px] right-[80px] z-20
-         bg-white/25  rounded-xl shadow-xl p-3 items-center gap-3 w-[700px]">
+<div
+  class="hidden lg:flex absolute top-[300px] right-[80px] z-20
+         bg-white/25 rounded-xl shadow-xl p-3 items-center gap-3 w-[480px]"
+>
 
-        <input type="text" placeholder="Location"
-          class="w-[180px] bg-white/65 hover:bg-white border rounded-xl px-4 py-2 outline-none">
+  <!-- Location Search -->
+  <div class="relative flex-1">
 
-        <select class="w-[150px] border bg-white/65 hover:bg-white  rounded-xl px-4 py-2 outline-none">
-          <option>Type</option>
-          <option>Apartment</option>
-          <option>Villa</option>
-          <option>Plot</option>
-        </select>
+    <span
+      class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#0F5C63] text-[20px]"
+    >
+      location_on
+    </span>
 
-        <select class="w-[150px] bg-white/65 hover:bg-white border rounded-xl px-4 py-2 outline-none">
-          <option>Budget</option>
-          <option>₹20L - ₹50L</option>
-          <option>₹50L - ₹1Cr</option>
-        </select>
+    <input
+      v-model="location"
+      @input="searchLocation"
+      type="text"
+      placeholder="Search by Project, Location or Price"
+      class="w-full bg-white/70 hover:bg-white border rounded-xl pl-10 pr-4 py-2 outline-none"
+    />
 
-        <button class="bg-[#0F5C63]/75 hover:bg-[#0F5C63]  text-white px-8 py-2 rounded-xl whitespace-nowrap">
-          Search
-        </button>
+    <div
+  v-if="suggestions.length"
+  class="absolute left-0 right-0 top-[calc(100%+8px)] z-50
+         bg-white rounded-xl shadow-xl border border-gray-200
+         max-h-64 overflow-y-auto"
+>
+  <div
+    v-for="item in suggestions"
+    :key="item.name"
+    @click="selectLocation(item)"
+    class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0"
+  >
+    <span class="material-symbols-outlined text-[#0F5C63]">
+      location_on
+    </span>
 
-      </div>
+    <div>
+      <p class="font-medium text-[16px]">
+        {{ item.project_name }}
+      </p>
+
+      <p class="text-xs text-gray-500">
+        {{ item.location }} • ₹{{ item.price }}
+      </p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Type Dropdown -->
+
+  <!--
+  <select class="w-[150px] border bg-white/65 hover:bg-white rounded-xl px-4 py-2 outline-none">
+    <option>Type</option>
+    <option>Apartment</option>
+    <option>Villa</option>
+    <option>Plot</option>
+  </select>
+  -->
+
+  <!-- Budget Dropdown -->
+
+  <!--
+  <select class="w-[150px] bg-white/65 hover:bg-white border rounded-xl px-4 py-2 outline-none">
+    <option>Budget</option>
+    <option>₹20L - ₹50L</option>
+    <option>₹50L - ₹1Cr</option>
+  </select>
+  -->
+
+  <!-- Search Button -->
+  <button
+    @click="router.push({
+      path: '/properties',
+      query: {
+        home_location: location.value
+      }
+    })"
+    class="bg-[#0F5C63]/75 hover:bg-[#0F5C63] text-white px-8 py-2 rounded-xl whitespace-nowrap"
+  >
+    Search
+  </button>
+
+</div>
 
       <!-- Floating Card -->
       <div class="hidden md:flex absolute bottom-0 right-0
@@ -130,9 +193,46 @@
 
     <div class="bg-white rounded-2xl shadow-xl p-4">
 
-      <input type="text" placeholder="Location" class="w-full border rounded-xl px-4 py-3 mb-3 outline-none">
+      <!-- <input type="text" placeholder="Location" class="w-full border rounded-xl px-4 py-3 mb-3 outline-none"> -->
+       <div class="relative mb-3">
 
-      <div class="grid grid-cols-2 gap-3">
+  <input
+    v-model="location"
+    @input="searchLocation"
+    type="text"
+    placeholder="Search by Project, Location or Price"
+    class="w-full border rounded-xl px-4 py-3 outline-none"
+  />
+
+  <div
+    v-if="suggestions.length"
+    class="absolute top-full left-0 right-0 bg-white rounded-xl shadow-lg mt-1 z-50 max-h-60 overflow-y-auto"
+  >
+    <div
+  v-for="item in suggestions"
+  :key="item.name"
+  @click="selectLocation(item)"
+  class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 cursor-pointer border-b last:border-b-0"
+>
+  <span class="material-symbols-outlined text-[#0F5C63]">
+    location_on
+  </span>
+
+  <div>
+    <p class="font-medium text-[16px]">
+      {{ item.project_name }}
+    </p>
+
+    <p class="text-xs text-gray-500">
+      {{ item.location }} • ₹{{ item.price }}
+    </p>
+  </div>
+</div>
+  </div>
+
+</div>
+
+      <!-- <div class="grid grid-cols-2 gap-3">
 
         <select class="border rounded-xl px-4 py-3 outline-none">
           <option>Type</option>
@@ -147,9 +247,15 @@
           <option>₹50L - ₹1Cr</option>
         </select>
 
-      </div>
+      </div> -->
 
-      <button class="w-full mt-3 bg-[#0F5C63]/75 hover:bg-[#0F5C63] text-white py-3 rounded-xl">
+      <button    @click="router.push({
+      path: '/properties',
+      query: {
+        home_location: location.value
+      }
+    })"
+       class="w-full mt-3 bg-[#0F5C63]/75 hover:bg-[#0F5C63] text-white py-3 rounded-xl">
         Search
       </button>
 
@@ -223,7 +329,8 @@
 </template>
 
 <script setup>
-
+import { ref } from "vue";
+import axios from "axios";
 import router from '../router.js';
 import AboutTheDwellin from './AboutTheDwellin.vue';
 import CTA from './CTA.vue';
@@ -234,10 +341,44 @@ import SinglePropertyDetails from './SinglePropertyDetails.vue';
 import Testimonials from './Testimonials.vue';
 
 
+
+const location = ref("");
+const suggestions = ref([]);
+const searchLocation = async () => {
+  if (location.value.length < 0) {
+    suggestions.value = [];
+    return;
+  }
+
+  try {
+    const res = await axios.get(
+      "/api/method/dwell_in_door.api.search.search_location",
+      {
+        params: {
+          search: location.value,
+        },
+      }
+    );
+
+    suggestions.value = res.data.message;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const selectLocation = (item) => {
+  location.value = item.location;
+  suggestions.value = [];
+ router.push({
+  path: "/properties",
+  query: {
+    home_location: item.location
+  }
+})
+};
 const getFileUrl = (file) => {
   return `${window.location.origin}/files/${file}`;
 };
-
 
 // import PropertySections from '@/home/PropertySections.vue'
 </script>

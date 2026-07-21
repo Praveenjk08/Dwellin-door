@@ -34,12 +34,12 @@
 
                     <div class="flex flex-wrap gap-3">
 
-                        <button
+                        <button @click="router.push('/properties')"
                             class="bg-[#0D5C63] text-white px-4 py-2 rounded-xl font-semibold hover:bg-[#08474d] transition">
                             Explore Properties
                         </button>
 
-                        <button
+                        <button @click="router.push('/contact-us')"
                             class="border border-[#0D5C63] text-[#0D5C63] px-4 py-2 rounded-xl font-semibold hover:bg-[#0D5C63] hover:text-white transition">
                             Contact Us
                         </button>
@@ -76,6 +76,7 @@
 </template>
 <script setup>
 
+import router from '../router.js';
 import CustomerReview from './CustomerReview.vue';
 import OurExprience from './OurExprience.vue';
 import StatsCrads from './StatsCrads.vue';

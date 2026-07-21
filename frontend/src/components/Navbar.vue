@@ -127,7 +127,7 @@
                     </RouterLink>
 
                     <button @click="router.push('/contact-us')"
-                        class="bg-[#0D5C63] text-white py-3 rounded-xl font-medium">
+                        class="bg-[#0D5C63] text-white py-2 rounded-xl font-medium">
                         Enquire Now
                     </button>
 

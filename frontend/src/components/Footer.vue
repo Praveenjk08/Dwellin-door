@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row w-full lg:w-auto gap-3 sm:items-center">
-                    <input type="email" placeholder="Enter your email" class="w-full lg:w-[220px]
+                    <input type="email" v-model="email" placeholder="Enter your email" class="w-full lg:w-[220px]
   h-9
   bg-[#29333A]
   rounded-full
@@ -30,7 +30,7 @@
   appearance-none
   placeholder:text-gray-400" />
 
-                    <button class="h-9
+                    <button @click="subscribe" class="h-9
                         px-4
                         rounded-full
                         bg-white
@@ -39,6 +39,14 @@
                         font-medium">
                         Subscribe
                     </button>
+
+                    <p v-if="successMessage" class="text-green-600">
+  {{ successMessage }}
+</p>
+
+<p v-if="errorMessage" class="text-red-600">
+  {{ errorMessage }}
+</p>
                 </div>
 
                 <div class="w-full md:w-[400px] lg:w-auto">
@@ -86,55 +94,151 @@
                 <div class="grid grid-cols-2 gap-10 lg:gap-16 mr-0 lg:mr-20">
 
                     <div class="space-y-3 text-sm">
-                        <a href="#" class="block text-gray-600 hover:text-white">Home</a>
-                        <a href="#" class="block text-gray-600 hover:text-white">Categories</a>
-                        <a href="#" class="block text-gray-600 hover:text-white">Properties</a>
-                        <a href="#" class="block text-gray-600 hover:text-white">Featured Property</a>
-                    </div>
+    <RouterLink
+        to="/"
+        class="block text-gray-600 hover:text-white"
+    >
+        Home
+    </RouterLink>
 
-                    <div class="space-y-3 text-sm">
-                        <a href="#" class="block text-gray-600 hover:text-white">Testimonials</a>
-                        <a href="#" class="block text-gray-600 hover:text-white">Blog</a>
-                        <a href="#" class="block text-gray-600 hover:text-white">FAQs</a>
-                        <a href="#" class="block text-gray-600 hover:text-white">Contact Us</a>
-                    </div>
+    <RouterLink
+        to="/properties"
+        class="block text-gray-600 hover:text-white"
+    >
+        Properties
+    </RouterLink>
 
+    <RouterLink
+        to="/gallery"
+        class="block text-gray-600 hover:text-white"
+    >
+        Gallery
+    </RouterLink>
+</div>
+
+                   <div class="space-y-3 text-sm">
+    <RouterLink to="/about-us" class="block text-gray-600 hover:text-white">
+        Testimonials
+    </RouterLink>
+
+    <RouterLink to="/blogs" class="block text-gray-600 hover:text-white">
+        Blog
+    </RouterLink>
+
+    <RouterLink to="/contact-us" class="block text-gray-600 hover:text-white">
+        Contact Us
+    </RouterLink>
+</div>
                 </div>
 
             </div>
 
             <!-- Bottom -->
-            <div
-                class="border-t border-white/10 py-4 flex flex-col md:flex-row items-center justify-between gap-4 mx-0 md:mx-10 lg:mx-[135px]">
+<div
+    class="border-t border-white/10 py-5
+           flex flex-col md:flex-row
+           items-center justify-between
+           gap-4
+           text-center md:text-left
+           mx-5 md:mx-10 lg:mx-[135px]">
 
-                <p class="text-xs text-gray-500 text-center md:text-left">
-                    ©2026 Dwell In Door
-                </p>
+    <!-- Copyright -->
+    <p class="text-xs text-gray-500">
+        ©2026 Dwell In Door
+    </p>
 
-                <div class="flex flex-wrap justify-center items-center gap-6">
-                    <a href="#" class="text-xs text-gray-500 hover:text-white">
-                        Terms of Service
-                    </a>
+    <!-- Links -->
+    <div
+        class="flex flex-col sm:flex-row
+               items-center
+               gap-3 sm:gap-6">
 
-                    <a href="#" class="text-xs text-gray-500 hover:text-white">
-                        Privacy Policy
-                    </a>
-                </div>
+        <a href="#" class="text-xs text-gray-500 hover:text-white transition">
+            Terms of Service
+        </a>
 
-            </div>
+        <a href="#" class="text-xs text-gray-500 hover:text-white transition">
+            Privacy Policy
+        </a>
+
+        <a
+            href="https://quantumberg.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-gray-500 hover:text-white transition"
+        >
+            Powered By:
+            <span class="font-semibold text-[#0D5C63]">
+                QuantumBerg Technologies
+            </span>
+        </a>
+
+    </div>
+
+</div>
 
         </div>
     </footer>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import router from '../router';
+import { ref } from "vue";
+import axios from "axios";
 
+const email = ref("");
+const successMessage = ref("");
+const errorMessage = ref("");
 
-const sucessMessage = ref("")
-const errorMessage = ref("")
+const subscribe = async () => {
+  successMessage.value = "";
+  errorMessage.value = "";
 
+   // Empty email validation
+  if (!email.value.trim()) {
+    errorMessage.value = "Please enter your email address.";
+    return;
+  }
 
+  // Email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  if (!emailRegex.test(email.value)) {
+    errorMessage.value = "Please enter a valid email address.";
+    return;
+  }
+  try {
+    const response = await axios.post(
+      "/api/method/dwell_in_door.api.newsletter.add_email",
+      {
+        email: email.value,
+      }
+    );
+
+   const result = response.data.message;
+
+if (result.status === "success") {
+  successMessage.value = result.message;
+  errorMessage.value = "";
+  email.value = "";
+
+  setTimeout(() => {
+    successMessage.value = "";
+  }, 3000);
+
+} else if (result.status === "exists") {
+  errorMessage.value = result.message;
+
+  setTimeout(() => {
+    errorMessage.value = "";
+  }, 3000);
+}
+  } catch (error) {
+    if (error.response) {
+      errorMessage.value =
+        error.response.data.message || "Something went wrong!";
+    } else {
+      errorMessage.value = "Server connection failed.";
+    }
+  }
+};
 </script>

@@ -390,7 +390,15 @@ const route = useRoute()
 
 onMounted(() => {
 
-    if (route.query.location) {
+
+     if (route.query.home_location) {
+
+        getPropertyByLocation(route.query.home_location)
+
+    }
+
+    // PropertySection (East / West / North / South)
+    else if (route.query.location) {
 
         selectedLocation.value = [route.query.location]
 
@@ -403,6 +411,27 @@ onMounted(() => {
     }
 
 })
+
+//This search bar api calling
+const getPropertyByLocation = async (location) => {
+    try {
+        const response = await axios.get(
+            "/api/method/dwell_in_door.api.search.get_property_by_location_serach",
+            {
+                params: {
+                    location: location
+                }
+            }
+        );
+
+        api_propertydetils.value = response.data.message;
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
 
 </script>
 
