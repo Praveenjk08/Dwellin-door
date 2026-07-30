@@ -1,7 +1,7 @@
 <template>
 
     <!--Next section-5-->
-    <section class="my-10 bg-white "
+    <section class="mt-5 mb-10 bg-white "
         v-if="project.property_loaction_detail_descr?.length && project.property_location_details?.length && project.property_loaction_link?.length">
         <div class="max-w-[1400px] mx-auto px-4">
 

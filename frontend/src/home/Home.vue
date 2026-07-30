@@ -26,7 +26,7 @@
           leading-[100%]
           tracking-[-0.02em]
           font-semibold
-          text-white">
+          text-white">  
           Nature At <br />
           It's Best !
         </h1>

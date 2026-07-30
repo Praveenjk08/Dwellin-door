@@ -66,8 +66,11 @@
                 <div v-for="(item, index) in paginatedGallery" :key="index"
                     class="relative group overflow-hidden rounded-[24px]">
 
-                    <img :src="item.iamge"
-                        class="w-full h-[240px] object-cover rounded-[24px] group-hover:scale-105 transition duration-500" />
+                    <img
+    :src="item.iamge"
+    @click="openViewer(index)"
+    class="w-full h-[240px] object-cover rounded-[24px] group-hover:scale-105 transition duration-500 cursor-pointer"
+/>
 
                     <div
     class="group absolute top-3 right-3 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md cursor-pointer"
@@ -85,6 +88,52 @@
                 </div>
 
             </div>
+
+
+    <div
+    v-if="showViewer" @click.self="closeViewer"
+    class="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center"
+>
+   <!-- Previous -->
+<button
+    @click="prevImage"
+    class="absolute left-6 z-20 w-12 h-12 rounded-full bg-white/20 hover:bg-white/35 transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
+>
+    <span class="material-symbols-outlined text-white text-[28px]">
+        chevron_left
+    </span>
+</button>
+
+    <!-- Image Wrapper -->
+    <div class="relative inline-block">
+
+        <img
+            :src="gallery[selectedIndex]?.iamge"
+            class="max-w-[90vw] max-h-[85vh] rounded-xl"
+        />
+
+        <!-- ✅ Close button -->
+        <button
+            @click="closeViewer"
+            class="absolute top-0 right-0 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center"
+        >
+            <span class="material-symbols-outlined text-white text-[24px]">
+                close
+            </span>
+        </button>
+
+    </div>
+
+   <!-- Next -->
+<button
+    @click="nextImage"
+    class="absolute right-6 z-20 w-12 h-12 rounded-full bg-white/20 hover:bg-white/35 transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
+>
+    <span class="material-symbols-outlined text-white text-[28px]">
+        chevron_right
+    </span>
+</button>
+</div>
          <div class="flex justify-center mt-10">
 
   <VueAwesomePaginate
@@ -106,86 +155,14 @@
 
     </template>
 
-<!-- <script setup>
-import axios from 'axios';
-import { onMounted, ref, computed } from 'vue';
-import Paginate from "vuejs-paginate-next"
 
-const tags = ref([])
-
-const currentPage = ref(1)
-const itemsPerPage = 12
-const paginatedGallery = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage
-    const end = start + itemsPerPage
-    return gallery.value.slice(start, end)
-})
-
-const totalPages = computed(() => {
-    return Math.ceil(gallery.value.length / itemsPerPage)
-})
-
-const get_all_tags = async () => {
-    try {
-
-        const response = await axios.get("/api/method/dwell_in_door.api.gallery.get_all_tags")
-
-        tags.value = response.data.message
-
-
-
-
-    } catch (error) {
-
-        console.log(error);
-
-    }
-}
-
-
-const gallery = ref([])
-const tagsname = ref("")
-
-const galleryCount = ref(0)
-const changePage = (page) => {
-   
-    currentPage.value = page
-}
-
-const getGalleryByTag = async (tag) => {
-    try {
-
-        const response = await axios.get(
-            `/api/method/dwell_in_door.api.gallery.get_gallery_by_tag?tag=${tag}`
-        )
-        console.log(tag);
-
-        tagsname.value = tag
-        gallery.value = response.data.message
-        galleryCount.value = response.data.message.length
-        // Reset to first page whenever a new tag is selected
-        currentPage.value = 1
-
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-
-onMounted(() => {
-    get_all_tags()
-    getGalleryByTag("All")
-})
-
-
-
-</script> -->
 
 <script setup>
 import axios from "axios";
-// import "vue-awesome-paginate/dist/style.css";
-import { ref, computed, onMounted } from "vue";
-// import VueAwesomePaginate from "vue-awesome-paginate";
+import { ref, computed, onMounted, onUnmounted } from "vue";
+
+
+
 
 const tags = ref([]);
 const gallery = ref([]);
@@ -244,6 +221,64 @@ onMounted(() => {
     get_all_tags();
     getGalleryByTag("All");
 });
+
+
+
+//user clkiked on the gallery it will show full iamge
+const showViewer = ref(false)
+const selectedIndex = ref(0)
+
+const openViewer = (index) => {
+    selectedIndex.value = index
+    showViewer.value = true
+}
+
+const closeViewer = () => {
+    showViewer.value = false
+}
+
+const nextImage = () => {
+    if (selectedIndex.value < gallery.value.length - 1) {
+        selectedIndex.value++
+    } else {
+        selectedIndex.value = 0
+    }
+}
+
+const prevImage = () => {
+    if (selectedIndex.value > 0) {
+        selectedIndex.value--
+    } else {
+        selectedIndex.value = gallery.value.length - 1
+    }
+}
+const handleKeyDown = (event) => {
+    if (!showViewer.value) return
+
+    switch (event.key) {
+        case "ArrowLeft":
+            prevImage()
+            break
+
+        case "ArrowRight":
+            nextImage()
+            break
+
+        case "Escape":
+            closeViewer()
+            break
+    }
+}
+onMounted(() => {
+    get_all_tags()
+    getGalleryByTag("All")
+
+    window.addEventListener("keydown", handleKeyDown)
+})
+
+onUnmounted(() => {
+    window.removeEventListener("keydown", handleKeyDown)
+})
 </script>
 <style scoped>
 :deep(.pagination-container) {

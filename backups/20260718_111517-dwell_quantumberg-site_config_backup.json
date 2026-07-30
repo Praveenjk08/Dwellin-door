@@ -1,0 +1,11 @@
+{
+ "db_name": "_b2a8d538bafc3452",
+ "db_password": "Hl3pjsqdnnNKAKQe",
+ "db_type": "mariadb",
+ "db_user": "_b2a8d538bafc3452",
+ "domains": [
+  "dwellindoors.quantumberg.com"
+ ],
+ "host_name": "https://dwellindoors.quantumberg.com",
+ "ignore_csrf": 1
+}

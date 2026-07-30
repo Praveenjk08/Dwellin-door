@@ -1,12 +1,12 @@
 <template>
-    <section class="my-10 px-4 md:px-10" v-if="properties && properties.length > 0">
+    <section class="my-5 px-4 md:px-10" v-if="properties && properties.length > 0">
         <div class="max-w-[1400px] mx-auto px-4">
 
             <!-- Heading -->
             <div class="flex items-center justify-between mb-8">
 
                 <div>
-                    <h2 class="text-[28px] font-bold text-[#1B1B1B]">
+                    <h2 class="text-[18px] md:text-[22px] font-bold text-[#1B1B1B]">
                         Similar Properties
                     </h2>
 
@@ -14,7 +14,7 @@
                 </div>
 
                <button
-    class="hidden md:flex items-center gap-2 text-[#0D5C63] font-semibold"
+    class=" md:flex items-center gap-2 text-[#0D5C63] font-semibold"
     @click="router.push({
         path: '/properties',
         query: {
@@ -24,9 +24,9 @@
 >
     View All
 
-    <span class="material-symbols-outlined text-[18px]">
-        arrow_forward
-    </span>
+   <span class="material-symbols-outlined text-[14px] md:text-[18px] font-light">
+    arrow_forward
+</span>
 </button>
 
             </div>

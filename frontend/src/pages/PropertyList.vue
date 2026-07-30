@@ -405,6 +405,7 @@ onMounted(() => {
         applyFilters()
 
     }
+    //similar projects
     else if (route.query.location_type) {
 
         selectedLocation.value = [route.query.location_type]
