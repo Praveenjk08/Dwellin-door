@@ -18,9 +18,7 @@
       <!-- Content -->
       <div class="absolute left-6 md:left-12 lg:left-[140px] top-20 md:top-36 z-10">
 
-        <!-- <p class="text-white text-xs md:text-sm mb-4">
-          Palm Springs, CA
-        </p> -->
+      
 
         <h1 class="text-[38px] md:text-[50px] lg:text-[60px]
           leading-[100%]
@@ -30,6 +28,12 @@
           Nature At <br />
           It's Best !
         </h1>
+        <!-- <h1 class="text-[28px] md:text-[40px] lg:text-[50px]
+          leading-[100%]
+          tracking-[-0.02em]
+          font-semibold
+          text-white">
+          Premium  <br>Apartments, <br> Villas & Plots <br> in Bangalore</h1> -->
 
         <div class="flex flex-wrap items-center gap-3 md:gap-4 mt-6">
 
@@ -97,27 +101,7 @@
 
   </div>
 
-  <!-- Type Dropdown -->
-
-  <!--
-  <select class="w-[150px] border bg-white/65 hover:bg-white rounded-xl px-4 py-2 outline-none">
-    <option>Type</option>
-    <option>Apartment</option>
-    <option>Villa</option>
-    <option>Plot</option>
-  </select>
-  -->
-
-  <!-- Budget Dropdown -->
-
-  <!--
-  <select class="w-[150px] bg-white/65 hover:bg-white border rounded-xl px-4 py-2 outline-none">
-    <option>Budget</option>
-    <option>₹20L - ₹50L</option>
-    <option>₹50L - ₹1Cr</option>
-  </select>
-  -->
-
+  
   <!-- Search Button -->
   <button
     @click="router.push({
@@ -232,22 +216,7 @@
 
 </div>
 
-      <!-- <div class="grid grid-cols-2 gap-3">
-
-        <select class="border rounded-xl px-4 py-3 outline-none">
-          <option>Type</option>
-          <option>Apartment</option>
-          <option>Villa</option>
-          <option>Plot</option>
-        </select>
-
-        <select class="border rounded-xl px-4 py-3 outline-none">
-          <option>Budget</option>
-          <option>₹20L - ₹50L</option>
-          <option>₹50L - ₹1Cr</option>
-        </select>
-
-      </div> -->
+      
 
       <button    @click="router.push({
       path: '/properties',
@@ -380,5 +349,4 @@ const getFileUrl = (file) => {
   return `${window.location.origin}/files/${file}`;
 };
 
-// import PropertySections from '@/home/PropertySections.vue'
 </script>

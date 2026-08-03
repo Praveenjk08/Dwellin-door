@@ -91,26 +91,7 @@ const goToBlog = (url) => {
     });
 };
 
-// const blogs = ref([
-//     {
-//         title: "Home buying tips",
-//         date: "Feb 17, 2024",
-//         category: "Tips",
-//         image: "blog-image-1"
-//     },
-//     {
-//         title: "Boost home value",
-//         date: "Feb 18, 2024",
-//         category: "Guides",
-//         image: "blog-image-2"
-//     },
-//     {
-//         title: "Mortgage rates update",
-//         date: "Feb 19, 2024",
-//         category: "Updates",
-//         image: "blog-image-3"
-//     }
-// ]);
+
 const blogs = ref([])
 
 const get_all_blogs = async () => {
