@@ -88,7 +88,7 @@
                     <!-- Image -->
                     <div class="pt-12 lg:pt-0 pb-10 lg:mt-28 relative z-10">
 
-                        <img :src="testimonials[currentIndex].image"
+                        <img :src="testimonials[currentIndex].image" :alt="`${testimonials[currentIndex].name} testimonial - Dwell In Door`"
                             class="w-full max-w-full lg:max-w-[440px] h-[250px] md:h-[320px] object-cover rounded-[20px]" />
 
                     </div>

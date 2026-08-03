@@ -231,7 +231,7 @@ onUnmounted(() => {
                 <div class="h-f rounded-3xl">
                     <Carousel :items-to-show="1" :wrap-around="true" autoplay="3000">
                         <Slide v-for="(image, index) in images" :key="index">
-                            <img :src="image" class="w-full md:h-[500px] rounded-[10px] object-cover" />
+                            <img :src="image"  alt="Featured luxury villa in Bangalore by Dwell In Door" class="w-full md:h-[500px] rounded-[10px] object-cover" />
                         </Slide>
 
                         <template #addons>

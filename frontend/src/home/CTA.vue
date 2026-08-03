@@ -8,7 +8,9 @@
             <div class="relative rounded-[10px] overflow-hidden">
 
                 <!-- Background Image -->
-                <img :src="getFiles('CTA-image.jpeg')" class="w-full h-[320px] md:h-[450px] object-cover" />
+                <img :src="getFiles('CTA-image.jpeg')"
+                alt="Premium apartments, villas and plots in Bangalore by Dwell In Door"
+                class="w-full h-[320px] md:h-[450px] object-cover" />
 
                 <!-- Content -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-6">

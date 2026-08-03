@@ -5,10 +5,10 @@
     <div class="relative h-[400px] md:h-[500px] overflow-visible">
 
       <!-- Image -->
-      <img :src="getFileUrl('home-banner-image-desktopece40f.png')" alt="Banner"
+      <img :src="getFileUrl('home-banner-image-desktopece40f.png')" alt="Premium apartments, villas and plots in Bangalore by Dwell In Door"
         class="hidden md:block w-full h-ful md:h-full md:object-cover" />
 
-      <img :src="getFileUrl('mobile-home-banner.png')" alt="Banner"
+      <img :src="getFileUrl('mobile-home-banner.png')"  alt="Luxury real estate properties in Bangalore by Dwell In Door"
         class="md:hidden w-full h-ful md:h-full md:object-cover" />
 
       <!-- Overlay -->

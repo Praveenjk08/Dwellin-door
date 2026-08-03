@@ -43,7 +43,7 @@
 
                 <div v-for="blog in blogs" :key="blog.title" class="group " @click="goToBlog(blog.url)">
 
-                    <img :src="blog.image"
+                    <img :src="blog.image" :alt="`${blog.blog_name} | Dwell In Door Real Estate Blog`"
                         class="w-full h-[200px] object-cover rounded-[20px] group-hover:scale-[1.02] transition duration-300 cursor-pointer" />
 
                     <div class="flex justify-between items-center mt-5">

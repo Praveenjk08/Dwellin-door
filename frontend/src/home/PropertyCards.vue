@@ -13,7 +13,7 @@
                 </div>
 
                 <h2 class="text-3xl md:text-[32px] font-semibold text-[#1F2937]">
-                    Discover inspiring designed homes.
+                    Premium Real Estate Properties in Bangalore
                 </h2>
 
                 <p class="text-gray-500 mt-1 text-[12px]">
@@ -45,7 +45,7 @@
                         <div class="rounded-[16px] shadow-lg bg-white overflow-hidden cursor-pointer min-h-[370px]">
 
                             <!-- Image -->
-                            <img :src="item.image" alt="" class="w-full h-[190px] object-cover p-2 rounded-[18px]">
+                            <img :src="item.image"  :alt="`${item.project_name} - Premium Property in ${item.location}`" class="w-full h-[190px] object-cover p-2 rounded-[18px]">
 
                             <!-- Content -->
                             <div class="p-4">

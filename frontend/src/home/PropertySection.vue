@@ -42,7 +42,7 @@
             location: proprty_type[3]?.location_type
           }
         })">
-          <img :src="proprty_type[3]?.images"
+          <img :src="proprty_type[3]?.images" :alt="`${proprty_type[3]?.location_type} Premium Properties in Bangalore`"
             class="w-full h-[180px] sm:h-[220px] md:h-[260px] object-cover rounded-[20px] transition-all duration-500 md:hover:scale-110" />
 
           <span
@@ -61,7 +61,7 @@
             }
           })">
 
-            <img :src="proprty_type[2]?.images"
+            <img :src="proprty_type[2]?.images" :alt="`${proprty_type[2]?.location_type} Luxury Villas in Bangalore`"
               class="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-110" />
 
             <span
@@ -113,7 +113,7 @@
                 location: proprty_type[1]?.location_type
               }
             })">
-              <img :src="proprty_type[1]?.images"
+              <img :src="proprty_type[1]?.images" :alt="`${proprty_type[1]?.location_type} Apartments in Bangalore`"
                 class="w-full h-[180px] md:h-[260px] object-cover rounded-[20px] transition-all duration-500 hover:scale-110" />
 
               <span
@@ -129,7 +129,7 @@
                 location: proprty_type[0]?.location_type
               }
             })">
-              <img :src="proprty_type[0]?.images"
+              <img :src="proprty_type[0]?.images" :alt="`${proprty_type[0]?.location_type} Residential Plots in Bangalore`"
                 class="w-full h-[180px] md:h-[260px] object-cover rounded-[20px] transition-all duration-500 hover:scale-110 " />
 
               <span
