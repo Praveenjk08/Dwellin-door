@@ -135,10 +135,12 @@ import Footer from "./components/Footer.vue";
 import FooterBarForMobile from "./FooterBarForMobile.vue";
 import Preloader from "./components/Preloader.vue";
 
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
+import { useRoute } from "vue-router";
 
 const loading = ref(true);
 const showScrollTop = ref(false);
+const route = useRoute();
 
 const handleScroll = () => {
   showScrollTop.value = window.scrollY > 300;
@@ -151,9 +153,24 @@ const scrollToTop = () => {
   });
 };
 
+const updateCanonical = () => {
+  let canonical = document.querySelector("link[rel='canonical']");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+
+  canonical.setAttribute(
+    "href",
+    window.location.origin + route.fullPath
+  );
+};
+
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-
+    updateCanonical();
   setTimeout(() => {
     loading.value = false;
   }, 1800);
@@ -162,6 +179,12 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
+watch(
+  () => route.fullPath,
+  () => {
+    updateCanonical();
+  }
+);
 </script>
 
 <style>
