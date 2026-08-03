@@ -12,6 +12,26 @@ let app = createApp(App)
 setConfig('resourceFetcher', frappeRequest)
 
 app.use(router)
+// ✅ Add this block
+router.afterEach((to) => {
+  document.title = to.meta.title || "Dwell In Door";
+
+  const updateMeta = (name, content) => {
+    let tag = document.querySelector(`meta[name="${name}"]`);
+
+    if (!tag) {
+      tag = document.createElement("meta");
+      tag.setAttribute("name", name);
+      document.head.appendChild(tag);
+    }
+
+    tag.setAttribute("content", content || "");
+  };
+
+  updateMeta("description", to.meta.description);
+  updateMeta("keywords", to.meta.keywords);
+});
+// ✅ End
 app.use(resourcesPlugin)
 app.use(VueAwesomePaginate);
 

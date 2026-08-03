@@ -6,7 +6,7 @@ const routes = [
     name: 'Home',
     component: () => import('@/home/Home.vue'),
     meta: {
-      title: 'Dwell In Door | Premium Real Estate in Bangalore',
+      title: 'Dwell In Door | Luxury Apartments, Villas & Plots in Bangalore',
       description: 'Discover premium apartments, villas, plots, and luxury homes with Dwell In Door. Find your dream property today.',
       keywords: 'Dwell In Door, real estate, apartments, villas, plots, luxury homes, Bangalore properties,qb'
     }
