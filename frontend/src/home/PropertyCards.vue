@@ -8,17 +8,20 @@
                     <div class="w-3 h-3 bg-[#35CAA0] rounded-sm"></div>
 
                     <span class="text-gray-500 font-medium text-sm">
-                        Properties
+                         Premium Properties in Bangalore
                     </span>
                 </div>
 
                 <h2 class="text-3xl md:text-[32px] font-semibold text-[#1F2937]">
-                    Premium Real Estate Properties in Bangalore
+                   Premium Apartments, Villas & Plots in Bangalore
                 </h2>
 
-                <p class="text-gray-500 mt-1 text-[12px]">
+                <!-- <p class="text-gray-500 mt-1 text-[12px]">
                     Curated homes where elegance, style, and comfort unite.
-                </p>
+                </p> -->
+                <p class="text-gray-500 mt-2 text-sm max-w-3xl mx-auto leading-6">
+    Explore premium apartments, luxury villas and residential plots in Bangalore. Discover verified real estate properties with spacious bedrooms, modern bathrooms and premium amenities.
+</p>
             </div>
 
 

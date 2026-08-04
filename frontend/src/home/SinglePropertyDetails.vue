@@ -31,13 +31,13 @@
                         </span>
 
                         <span class="font-medium text-[#435768] text-[14px]">
-                            Featured property
+                           Featured Property in Bangalore
                         </span>
 
                     </div>
 
                     <h2 class="text-[24px] md:text-[28px] lg:text-[30px] font-semibold leading-[1.05] text-[#1E252B]">
-                        Modern luxe villa
+                       Luxury Villas & Premium Homes in Bangalore
                     </h2>
 
                     <div class="flex items-center gap-2 mt-2 text-gray-500">
@@ -47,18 +47,18 @@
                         </span>
 
                         <span class="text-[14px] md:text-[16px]">
-                            20 S Aurora Ave, Miami
+                            Bangalore, Karnataka
                         </span>
 
                     </div>
 
                     <p class="mt-4 text-[12px] leading-6 text-gray-700">
-                        Experience luxury living at modern luxe villa, located at
-                        20 S Aurora Ave, Miami. Priced at $1,650,500, this 560 ft²
-                        smart home offers 4 bedrooms, 3 bathrooms, and spacious
-                        living areas. Enjoy energy efficiency, natural light,
-                        security systems, outdoor spaces, and 2 bar areas—
-                        perfect for 8+ guests. Built in 2025.
+                        Discover premium apartments, 
+                        luxury villas and residential plots in
+                         Bangalore with Dwell In Door. Our verified
+                          real estate properties feature spacious bedrooms, 
+                          modern bathrooms, premium amenities and prime
+                           locations to help you find your dream home.
                     </p>
 
                     <div class="mt-5 space-y-3">
@@ -72,11 +72,11 @@
                             <div>
 
                                 <h4 class="text-[16px] font-medium">
-                                    Poolside bliss
+                                    Premium Amenities
                                 </h4>
 
                                 <p class="text-gray-500 text-[14px]">
-                                    One of the few homes in the area with a private pool.
+                                    Enjoy landscaped gardens, clubhouse, swimming pool and premium lifestyle amenities.
                                 </p>
 
                             </div>
@@ -112,11 +112,11 @@
                             <div>
 
                                 <h4 class="text-[16px] font-medium">
-                                    Energy efficient
+                                    Verified Properties
                                 </h4>
 
                                 <p class="text-gray-500 text-[14px]">
-                                    Built in 2025 with sustainable and smart-home features.
+                                    Browse verified apartments, villas and plots with transparent pricing and trusted guidance.
                                 </p>
 
                             </div>

@@ -16,13 +16,13 @@
                         </span>
 
                         <span class="text-[#4B5A63] text-[14px] font-medium">
-                            Blog
+                            Real Estate Blog
                         </span>
 
                     </div>
 
                     <h2 class="text-[23px] md:text-[33px] font-semibold text-[#131A20] leading-tight">
-                        Real estate insights
+                       Bangalore Real Estate News and Tips
                     </h2>
 
                     <p class="text-[#8B8B8B] text-[13px] mt-2">

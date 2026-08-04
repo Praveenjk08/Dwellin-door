@@ -964,6 +964,74 @@ const downloadBrochure = () => {
         document.body.removeChild(link);
     }
 };
+const setProjectSeo = () => {
+    const title = `${project.value.project_name || 'Premium Property'} in ${project.value.location || 'Bangalore'} | Dwell In Door`;
+    const description = (project.value.descrption || 'Explore premium apartments, villas, plots, and luxury homes in Bangalore with Dwell In Door.').slice(0, 160);
+    const keywords = `${project.value.project_name || 'property'}, ${project.value.location || 'Bangalore'}, apartments, villas, plots, luxury homes, real estate, Dwell In Door`;
+    const image = project.value.image || 'https://www.dwellindoor.com/files/logo-with-some-changes.png';
+    const currentUrl = `${window.location.origin}${route.fullPath}`;
+
+    document.title = title;
+
+    const updateMetaByAttribute = (attribute, key, content) => {
+        let tag = document.querySelector(`meta[${attribute}="${key}"]`);
+
+        if (!tag) {
+            tag = document.createElement('meta');
+            tag.setAttribute(attribute, key);
+            document.head.appendChild(tag);
+        }
+
+        tag.setAttribute('content', content || '');
+    };
+
+    updateMetaByAttribute('name', 'description', description);
+    updateMetaByAttribute('name', 'keywords', keywords);
+    updateMetaByAttribute('property', 'og:title', title);
+    updateMetaByAttribute('property', 'og:description', description);
+    updateMetaByAttribute('property', 'og:type', 'website');
+    updateMetaByAttribute('property', 'og:url', currentUrl);
+    updateMetaByAttribute('property', 'og:image', image);
+    updateMetaByAttribute('name', 'twitter:card', 'summary_large_image');
+    updateMetaByAttribute('name', 'twitter:title', title);
+    updateMetaByAttribute('name', 'twitter:description', description);
+    updateMetaByAttribute('name', 'twitter:image', image);
+};
+
+const setProjectSchema = () => {
+    const currentProject = project.value || {};
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Residence',
+        name: currentProject.project_name || 'Premium Property',
+        description: currentProject.descrption || 'Premium real estate property in Bangalore',
+        image: currentProject.image || 'https://www.dwellindoor.com/files/logo-with-some-changes.png',
+        url: `${window.location.origin}${route.fullPath}`,
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: currentProject.location || 'Bangalore',
+            addressRegion: 'Karnataka',
+            addressCountry: 'IN'
+        },
+        offers: {
+            '@type': 'Offer',
+            price: currentProject.price || '0',
+            priceCurrency: 'INR'
+        }
+    };
+
+    let scriptTag = document.querySelector('#property-schema');
+
+    if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = 'property-schema';
+        scriptTag.type = 'application/ld+json';
+        document.head.appendChild(scriptTag);
+    }
+
+    scriptTag.textContent = JSON.stringify(schema);
+};
+
 const getProjectDetails = async () => {
     try {
         const response = await axios.get(
@@ -977,7 +1045,9 @@ const getProjectDetails = async () => {
         );
 
         project.value = response.data.message || {};
-        await getSimilarProjects()
+        await getSimilarProjects();
+        setProjectSeo();
+        setProjectSchema();
         console.log("URL Param:", route.params.url);
         console.log(project.gallery_images);
         console.log(project.value.brochure);

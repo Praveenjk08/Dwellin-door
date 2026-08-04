@@ -15,13 +15,13 @@
                         </span>
 
                         <span class="text-white text-[16px] font-medium">
-                            Testimonials
+                            Client Testimonials
                         </span>
 
                     </div>
 
                     <h2 class="text-white text-[26px] md:text-[30px] font-semibold leading-tight mb-5">
-                        What our clients says
+                        What Our Bangalore Property Buyers Say
                     </h2>
 
                     <div class="flex gap-3 lg:gap-4">

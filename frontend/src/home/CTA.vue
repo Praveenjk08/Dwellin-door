@@ -1,5 +1,5 @@
 <template>
-    <section class="mx-4 md:mx-10 lg:mx-40 pt-5 pb-20">
+    <section class="mx-4 md:mx-10 lg:mx-40 pt-5 pb-10">
 
         <div class="max-w-[1400px] mx-auto px-4">
 
@@ -9,7 +9,7 @@
 
                 <!-- Background Image -->
                 <img :src="getFiles('CTA-image.jpeg')"
-                alt="Premium apartments, villas and plots in Bangalore by Dwell In Door"
+                alt="Luxury apartments, premium villas and residential plots in Bangalore by Dwell In Door"
                 class="w-full h-[320px] md:h-[450px] object-cover" />
 
                 <!-- Content -->
@@ -18,8 +18,7 @@
                     <h2
                         class="absolute top-16 md:top-36 left-4 right-4 md:left-20 md:right-20 text-white text-[20px] md:text-[33px] lg:text-[35px] font-medium leading-tight">
 
-                        Enter a realm where exquisite design and
-                        timeless luxury come together.
+                        Discover Premium Apartments, Villas & Plots in Bangalore with Dwell In Door
 
                     </h2>
 
@@ -42,14 +41,14 @@
                         </span>
 
                         <span>
-                            Browse thousands of listings in prime locations at great prices!
+                            Browse verified apartments, villas and plots across Bangalore.
                         </span>
 
                         <span class="hidden md:block w-[50px] h-[1px] bg-white/70">
                         </span>
 
                         <span>
-                            Get a free property valuation—sell your home with confidence!
+                            Get expert real estate guidance and find your dream home in Bangalore.
                         </span>
 
                         <span class="hidden md:block absolute right-0 bottom-5 w-[30px] h-[1px] bg-white/70">

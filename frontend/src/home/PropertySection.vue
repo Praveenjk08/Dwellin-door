@@ -10,19 +10,19 @@
           <div class="flex items-center gap-2 mb-4">
             <div class="w-3 h-3 bg-[#35CAA0] rounded-sm"></div>
             <span class="text-sm text-gray-500 font-medium">
-              Categories
+             Bangalore Real Estate Categories
             </span>
           </div>
 
           <h2 class="text-[28px] md:text-[36px] lg:text-[30px] leading-[110%] font-semibold text-[#111827]">
-            Explore best properties
-            <br />
-            with expert services.
+            Premium Apartments, Villas & Plots in Bangalore
           </h2>
 
           <p class="mt-5 text-gray-500 text-base leading-6 max-w-full lg:max-w-[400px]">
-            Discover a diverse range of premium properties, from luxurious
-            apartments to spacious villas, tailored to your needs.
+             Discover premium apartments, luxury villas and residential plots
+              in Bangalore with Dwell In Door. Browse verified real estate 
+              properties featuring spacious bedrooms, modern bathrooms and premium 
+              amenities to find your dream home.
           </p>
 
           <!-- <button class="mt-5 bg-[#35CAA0] hover:bg-[#084950] text-white px-5 py-3 rounded-full font-medium transition">
@@ -81,8 +81,8 @@
               </h3>
 
               <p class="mt-2 text-sm md:text-base text-white/80 max-w-full md:max-w-[400px]">
-                Experience elegance and comfort with our exclusive luxury villas,
-                designed for sophisticated living.
+               Browse premium luxury villas in Bangalore featuring spacious bedrooms, modern
+                bathrooms, private parking and exclusive amenities for comfortable living.
               </p>
             </div>
 

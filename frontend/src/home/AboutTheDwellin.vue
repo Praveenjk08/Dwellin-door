@@ -1,5 +1,5 @@
 <template>
-    <section class="pb-20 pt-5 lg:mx-40">
+    <section class="pb-20 pt-2 lg:mx-40">
 
         <div class="max-w-[1400px] mx-auto px-4">
 
@@ -37,19 +37,20 @@
                         </span>
 
                         <span class="text-[15px] font-medium text-[#435768]">
-                            FAQs
+                             Real Estate FAQs
                         </span>
 
                     </div>
 
                     <h2 class="text-[28px] md:text-[33px] font-semibold leading-tight text-[#131A20]">
-                        Everything about Dwell In Door
+                        Frequently Asked Questions About Buying Property in Bangalore
                     </h2>
 
                     <p class="text-[#8B8B8B] text-[12px] leading-6 mt-3 mb-4">
-                        We know that buying, selling, or investing in real estate can be overwhelming.
-                        Here are some frequently asked questions about Dwell In Door to help guide
-                        you through the process.
+                        Find answers to common questions about buying apartments, 
+                        villas and residential plots in Bangalore. Dwell In Door
+                         helps you choose verified real estate properties with 
+                         confidence.
                     </p>
 
                     <!-- FAQ List -->
@@ -108,9 +109,9 @@ const activeIndex = ref(null);
 
 const faqs = [
     {
-        question: "Can I personalize my property?",
+        question: "Can I customize my apartment or villa?",
         answer:
-            "Yes, many properties offer customization options depending on the builder and project stage."
+            "Yes. Many apartments and villas offer customization options based on the builder, project stage and availability."
     },
     {
         question: "How can I find properties through Dwell In Door?",

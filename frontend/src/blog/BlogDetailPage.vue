@@ -48,6 +48,75 @@ const route = useRoute();
 
 const source = ref([]);
 
+const setBlogSeo = () => {
+    const blog = source.value?.[0] || {};
+    const title = `${blog.blog_heading || 'Real Estate Blog'} | Dwell In Door`;
+    const description = (blog.small_description || 'Read expert real estate articles, property investing tips, and latest market trends from Dwell In Door.').slice(0, 160);
+    const image = blog.image || 'https://www.dwellindoor.com/files/logo-with-some-changes.png';
+    const currentUrl = `${window.location.origin}${route.fullPath}`;
+
+    document.title = title;
+
+    const updateMetaByAttribute = (attribute, key, content) => {
+        let tag = document.querySelector(`meta[${attribute}="${key}"]`);
+
+        if (!tag) {
+            tag = document.createElement('meta');
+            tag.setAttribute(attribute, key);
+            document.head.appendChild(tag);
+        }
+
+        tag.setAttribute('content', content || '');
+    };
+
+    updateMetaByAttribute('name', 'description', description);
+    updateMetaByAttribute('name', 'keywords', `${blog.blog_heading || 'real estate blog'}, Dwell In Door, Bangalore real estate, property tips, home buying guide`);
+    updateMetaByAttribute('property', 'og:title', title);
+    updateMetaByAttribute('property', 'og:description', description);
+    updateMetaByAttribute('property', 'og:type', 'article');
+    updateMetaByAttribute('property', 'og:url', currentUrl);
+    updateMetaByAttribute('property', 'og:image', image);
+    updateMetaByAttribute('name', 'twitter:card', 'summary_large_image');
+    updateMetaByAttribute('name', 'twitter:title', title);
+    updateMetaByAttribute('name', 'twitter:description', description);
+    updateMetaByAttribute('name', 'twitter:image', image);
+};
+
+const setBlogSchema = () => {
+    const blog = source.value?.[0] || {};
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: blog.blog_heading || 'Real Estate Blog',
+        description: blog.small_description || 'Real estate insights and market trends from Dwell In Door.',
+        image: blog.image || 'https://www.dwellindoor.com/files/logo-with-some-changes.png',
+        url: `${window.location.origin}${route.fullPath}`,
+        author: {
+            '@type': 'Organization',
+            name: 'Dwell In Door'
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Dwell In Door',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.dwellindoor.com/files/logo-with-some-changes.png'
+            }
+        }
+    };
+
+    let scriptTag = document.querySelector('#blog-schema');
+
+    if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.id = 'blog-schema';
+        scriptTag.type = 'application/ld+json';
+        document.head.appendChild(scriptTag);
+    }
+
+    scriptTag.textContent = JSON.stringify(schema);
+};
+
 const get_blog_detail = async () => {
     try {
 
@@ -56,6 +125,8 @@ const get_blog_detail = async () => {
         );
 
         source.value = response.data.message;
+        setBlogSeo();
+        setBlogSchema();
 
     } catch (error) {
         console.log(error);
