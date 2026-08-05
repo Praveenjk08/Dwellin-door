@@ -155,4 +155,27 @@ onMounted(() => {
 .carousel__viewport {
     overflow: hidden !important;
 }
+
+.carousel__prev,
+.carousel__next {
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px !important;
+    height: 30px !important;
+
+    border-radius: 9999px !important;
+    background: #ffffff !important;
+    color: #000000 !important;   /* Black arrow */
+    border: none !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+.carousel__prev svg,
+.carousel__next svg {
+    fill: #000 !important;
+    stroke: #000 !important;
+}
 </style>
