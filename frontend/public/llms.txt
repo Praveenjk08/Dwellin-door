@@ -1,0 +1,39 @@
+# Dwell In Door
+
+> Dwell In Door is a real estate platform for discovering apartments, villas, plots, and premium properties in Bangalore.
+
+## Website
+
+- https://www.dwellindoor.com/
+
+## Main Pages
+
+- https://www.dwellindoor.com/properties
+- https://www.dwellindoor.com/about-us
+- https://www.dwellindoor.com/blogs
+- https://www.dwellindoor.com/gallery
+- https://www.dwellindoor.com/contact-us
+
+## Property Pages
+
+- https://www.dwellindoor.com/properties/azure-heights
+- https://www.dwellindoor.com/properties/imperial-pearl-villas
+- https://www.dwellindoor.com/properties/grand-vista-villas
+- https://www.dwellindoor.com/properties/royal-orchid-villas
+- https://www.dwellindoor.com/properties/modern-luxe-villa
+- https://www.dwellindoor.com/properties/mountain-retreat-villa
+- https://www.dwellindoor.com/properties/serenity-height-villas
+
+## Blog Articles
+
+- https://www.dwellindoor.com/blogs/mortgage-rates-updates
+- https://www.dwellindoor.com/blogs/boost-home-values
+- https://www.dwellindoor.com/blogs/home-buying-tipses
+
+## Sitemap
+
+- https://www.dwellindoor.com/sitemap.xml
+
+## Robots
+
+- https://www.dwellindoor.com/robots.txt
