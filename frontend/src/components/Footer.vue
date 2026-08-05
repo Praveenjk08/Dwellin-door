@@ -128,7 +128,8 @@
     <RouterLink to="/contact-us" class="block text-gray-600 hover:text-white">
         Contact Us
     </RouterLink>
-</div>
+    
+</div> 
                 </div>
 
             </div>
@@ -175,6 +176,39 @@
 
     </div>
 
+</div>
+
+<div class="border-t border-white/10 py-4 mx-5 md:mx-10 lg:mx-[135px]">
+    <div class="text-center text-xs text-gray-400 leading-6">
+        <p class="text-white font-semibold">Dwell In Door</p>
+
+        <p>
+            BTM Layout, Bengaluru, Karnataka - 560029, India
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+919876543210" class="hover:text-white">
+                +91 98765 43210
+            </a>
+            &nbsp; | &nbsp;
+            Email:
+            <a href="mailto:info@dwellindoor.com" class="hover:text-white">
+                info@dwellindoor.com
+            </a>
+        </p>
+
+        <p>
+            WhatsApp:
+            <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                class="hover:text-white"
+            >
+                Chat with us
+            </a>
+        </p>
+    </div>
 </div>
 
         </div>
