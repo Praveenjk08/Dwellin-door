@@ -13,13 +13,14 @@
                     </h2>
                     <div class="w-16 h-[2px] bg-[#D4AF37] mb-4  rounded-full"></div>
 
-                    <p class="text-gray-600 text-[14px] leading-6">
-                        {{
-                            showFullDescription
-                                ? project.long__descrption
-                                : project.long__descrption?.slice(0, 150) + "..."
-                        }}
-                    </p>
+                    <div class="text-gray-600 text-[14px] leading-6">
+                        <template v-if="showFullDescription">
+                            <div v-html="project.long__descrption"></div>
+                        </template>
+                        <template v-else>
+                            {{ stripHtml(project.long__descrption)?.slice(0, 150) }}...
+                        </template>
+                    </div>
 
                     <button v-if="project.long__descrption?.length > 150"
                         @click="showFullDescription = !showFullDescription" class="text-[#0D5C63] font-medium mt-2">
@@ -136,6 +137,14 @@ const props = defineProps({
 });
 
 const showFullDescription = ref(false);
+
+// Strip HTML tags for safe truncation in "Read More" preview
+const stripHtml = (html) => {
+    if (!html) return '';
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+};
 
 const downloadBrochure = () => {
     if (props.project?.brochure) {

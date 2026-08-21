@@ -125,12 +125,7 @@
                     </div>
 
                     <!-- Description -->
-                    <p class="mt-3 text-gray-600 leading-6 text-[15px]">
-                        <!-- Experience elevated living surrounded by greenery and modern amenities.
-                        Designed for contemporary families seeking comfort, convenience,
-                        and luxury in one destination. -->
-                        {{ project.descrption }}
-                    </p>
+                    <div class="mt-3 text-gray-600 leading-6 text-[15px]" v-html="project.descrption"></div>
 
                     <hr class="my-4">
 
@@ -964,6 +959,15 @@ const downloadBrochure = () => {
         document.body.removeChild(link);
     }
 };
+
+// Helper to strip HTML for truncation previews
+const stripHtml = (html) => {
+    if (!html) return '';
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+};
+
 const setProjectSeo = () => {
     const title = `${project.value.project_name || 'Premium Property'} in ${project.value.location || 'Bangalore'} | Dwell In Door`;
     const description = (project.value.descrption || 'Explore premium apartments, villas, plots, and luxury homes in Bangalore with Dwell In Door.').slice(0, 160);
