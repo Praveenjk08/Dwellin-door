@@ -19,9 +19,10 @@
                 <!-- <p class="text-gray-500 mt-1 text-[12px]">
                     Curated homes where elegance, style, and comfort unite.
                 </p> -->
-                <p class="text-gray-500 mt-2 text-sm max-w-3xl mx-auto leading-6">
-    Explore premium apartments, luxury villas and residential plots in Bangalore. Discover verified real estate properties with spacious bedrooms, modern bathrooms and premium amenities.
-</p>
+                <p class="hidden md:block text-gray-500 mt-2 text-sm max-w-3xl mx-auto leading-6">
+                    Explore premium apartments, luxury villas and residential plots in Bangalore. Discover verified real
+                    estate properties with spacious bedrooms, modern bathrooms and premium amenities.
+                </p>
             </div>
 
 
@@ -67,7 +68,7 @@
 
                                     <span
                                         class="bg-[#07BE8A1A]/10 text-[#07BE8A] px-3 py-1 rounded-full text-xs whitespace-nowrap">
-                                        ₹{{ item.price }}
+                                        {{ item.price }}
                                     </span>
 
                                 </div>

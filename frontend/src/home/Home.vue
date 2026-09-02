@@ -5,11 +5,11 @@
     <div class="relative h-[400px] md:h-[500px] overflow-visible">
 
       <!-- Image -->
-      <img :src="getFileUrl('home-banner-image-desktopece40f.png')" alt="Premium apartments, villas and plots in Bangalore by Dwell In Door"
+      <img :src="getFileUrl('home-back.png')" alt="Premium apartments, villas and plots in Bangalore by Dwell In Door"
         class="hidden md:block w-full h-ful md:h-full md:object-cover" />
 
-      <img :src="getFileUrl('mobile-home-banner.png')"  alt="Luxury real estate properties in Bangalore by Dwell In Door"
-        class="md:hidden w-full h-ful md:h-full md:object-cover" />
+      <img :src="getFileUrl('home-back.png')"  alt="Luxury real estate properties in Bangalore by Dwell In Door"
+        class="md:hidden w-full h-full md:h-full md:object-cover" />
 
       <!-- Overlay -->
       <div class=" absolute inset-0 bg-gradient-to-r from-[#8DB8E3]/80 via-[#8DB8E3]/40 to-transparent">
@@ -159,7 +159,7 @@
         <!-- Price -->
         <div class="flex-1 min-w-[150px] text-center md:text-left p-3 md:pl-6">
           <h3 class="text-lg md:text-2xl lg:text-3xl font-semibold">
-            $4,750,000
+            ₹40,750,000
           </h3>
           <p class="text-gray-500 text-xs md:text-sm">
             For selling price

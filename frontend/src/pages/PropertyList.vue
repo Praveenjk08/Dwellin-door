@@ -147,7 +147,7 @@
                                 <span
                                     class="bg-[#E8F8F3] text-[#35CAA0] px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap">
 
-                                    ₹ {{ item.price }}
+                                     {{ item.price }}
 
                                 </span>
 

@@ -139,7 +139,7 @@
                         <div>
 
                             <h3 class="text-[26px] font-semibold text-[#1E252B]">
-                                $1,650,500
+                                ₹50,650,500
                             </h3>
 
                             <p class="text-gray-400 text-[14px]">
@@ -165,9 +165,10 @@ import 'vue3-carousel/dist/carousel.css'
 import router from "../router";
 
 const images = [
-    "/files/singleimage.jpeg",
-    "/files/image (4).png",
-    "/files/image (5).png",
+    "/files/east.png",
+    "/files/west.png",
+    "/files/north.png",
+    "/files/south.png",
 ];
 
 const currentIndex = ref(0);

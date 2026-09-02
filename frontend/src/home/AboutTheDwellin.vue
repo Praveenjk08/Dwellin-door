@@ -10,17 +10,17 @@
 
                     <div class="flex flex-col gap-5">
 
-                        <img :src="getFileurl('abouask-image-1.png')" alt="Luxury apartment interior by Dwell In Door"
+                        <img :src="getFileurl('cta-1.png')" alt="Luxury apartment interior by Dwell In Door"
                             class="w-full h-[220px] md:h-[220px] object-cover rounded-[10px]" />
 
-                        <img :src="getFileurl('abouask-image-2.png')"   alt="Premium villa exterior by Dwell In Door"
+                        <img :src="getFileurl('cta-2.png')"   alt="Premium villa exterior by Dwell In Door"
                             class="w-full h-[220px] md:h-[220px] object-cover rounded-[10px]" />
 
                     </div>
 
                     <div>
 
-                        <img :src="getFileurl('abouask-image-3.png')" alt="Modern real estate property in Bangalore by Dwell In Door"
+                        <img :src="getFileurl('cta-3.png')" alt="Modern real estate property in Bangalore by Dwell In Door"
                             class="w-full h-[300px] md:h-[460px] object-cover rounded-[10px]" />
 
                     </div>

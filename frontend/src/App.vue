@@ -96,7 +96,7 @@ onUnmounted(() => {
       <i class="bi bi-whatsapp text-3xl"></i>
     </a>
 <RouterLink
-  v-if="$route.path !== '/'"
+  v-if="$route.path !== 'contact-Us'"
   to="/contact-us"
   class="fixed right-0 top-1/2 -translate-y-1/2 z-50
          hidden lg:flex

@@ -1,0 +1,16 @@
+{
+ "db_name": "_432a3004b7abef19",
+ "db_password": "0YOJES44CxLpjHaH",
+ "db_type": "mariadb",
+ "db_user": "_432a3004b7abef19",
+ "domains": [
+  "www.dwellindoor.com"
+ ],
+ "host_name": "https://dwellindoor.com",
+ "ignore_csrf": 1,
+ "installed_apps": [
+  "frappe",
+  "crm",
+  "dwell_in_door"
+ ]
+}

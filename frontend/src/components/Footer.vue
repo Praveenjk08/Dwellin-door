@@ -58,10 +58,38 @@
                 </div>
 
                 <div class="relative lg:top-[20px] top-0 flex items-center gap-5">
-                    <a href="#" class="text-2xl hover:text-[#16D6A4]">𝕏</a>
-                    <a href="#" class="text-2xl hover:text-[#16D6A4]">f</a>
-                    <a href="#" class="text-2xl hover:text-[#16D6A4]">◎</a>
-                </div>
+    
+    <!-- Twitter / X -->
+    <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-2xl text-gray-600 hover:text-[#16D6A4] transition-all duration-300 hover:scale-110"
+    >
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-2xl text-gray-600 hover:text-[#16D6A4] transition-all duration-300 hover:scale-110"
+    >
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-2xl text-gray-600 hover:text-[#16D6A4] transition-all duration-300 hover:scale-110"
+    >
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+</div>
 
             </div>
 
@@ -118,7 +146,7 @@
 
                    <div class="space-y-3 text-sm">
     <RouterLink to="/about-us" class="block text-gray-600 hover:text-white">
-        Testimonials
+        About Us
     </RouterLink>
 
     <RouterLink to="/blogs" class="block text-gray-600 hover:text-white">
@@ -154,13 +182,13 @@
                items-center
                gap-3 sm:gap-6">
 
-        <a href="#" class="text-xs text-gray-500 hover:text-white transition">
+        <router-link to="/termofpolicy" class="text-xs text-gray-500 hover:text-white transition">
             Terms of Service
-        </a>
+        </router-link>
 
-        <a href="#" class="text-xs text-gray-500 hover:text-white transition">
+        <router-link to="/privacypolicy" class="text-xs text-gray-500 hover:text-white transition">
             Privacy Policy
-        </a>
+        </router-link>
 
         <a
             href="https://quantumberg.com"

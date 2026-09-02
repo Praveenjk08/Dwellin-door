@@ -21,7 +21,7 @@ fixtures = [
     {
         "dt": "Custom Field",
         "filters": [
-            ["dt", "=", "CRM Lead"]
+            ["dt", "in", ["CRM Lead", "Property Amenities"]]
         ]
     },
     {
